@@ -1,20 +1,20 @@
 //
-//  SecondViewController.swift
+//  ThirdViewController.swift
 //  iShareEconomyApp
 //
-//  Created by Hu Ocean Li on 07/11/2019.
+//  Created by Hu Ocean Li on 09/11/2019.
 //  Copyright © 2019 Hu Ocean Li. All rights reserved.
 //
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class ThirdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.navigationController?.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
     }
 
 
 }
-
