@@ -11,6 +11,7 @@ import Foundation
 struct LoginObject: Codable {
     let id: String
     let username: String
+    let token: String
     
     private let expires: Date
     var expired: Bool {
@@ -19,9 +20,10 @@ struct LoginObject: Codable {
         }
     }
     
-    init(id: String, username: String, expires: Date) {
+    init(id: String, username: String, expires: Date, token: String) {
         self.id = id
         self.username = username
         self.expires = expires
+        self.token = token
     }
 }

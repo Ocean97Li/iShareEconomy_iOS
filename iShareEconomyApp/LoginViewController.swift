@@ -78,9 +78,5 @@ class LoginViewController: KUIViewController {
             }
         }
     }
-    
-    
-
-
 }
 

@@ -13,6 +13,7 @@ class LoginController {
     
     let loggedIn = BehaviorSubject<LoginObject?>(value: nil)
     let loginError = BehaviorSubject<String?>(value: nil)
+    let authToken = BehaviorSubject<String?>(value: nil)
     
     init() {
         loggedIn.onNext(loadFromFile())
@@ -28,7 +29,7 @@ class LoginController {
        request.httpMethod = "post"
        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
        request.httpBody = jsonData
-
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
@@ -44,8 +45,9 @@ class LoginController {
                     let expInt = Int(exp, radix: 10)!
                     let expDate = Date(timeIntervalSince1970: TimeInterval(expInt))
                     
-                    let loginObject = LoginObject(id: user["_id"] as! String, username: user["username"] as! String, expires: expDate)
+                    let loginObject = LoginObject(id: user["_id"] as! String, username: user["username"] as! String, expires: expDate, token: token)
                     self.saveToFile(loginObject)
+                    self.authToken.onNext(token)
                     self.loggedIn.onNext(loginObject)
                     
                 } else {
@@ -99,6 +101,7 @@ class LoginController {
         let decoder = PropertyListDecoder()
         if let retrieved = try? Data(contentsOf: ActiveURL),
             let decoded = try? decoder.decode(LoginObject.self, from: retrieved) {
+            self.authToken.onNext(decoded.token)
             return decoded
         }
         return nil
