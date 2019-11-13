@@ -21,6 +21,10 @@
 		9336EBDB23780ED200AB51C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336EBD423780ED200AB51C0 /* LoginViewController.swift */; };
 		9336EBDC23780ED200AB51C0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336EBD523780ED200AB51C0 /* LoginController.swift */; };
 		9336EBEA2378128400AB51C0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9336EBE92378128400AB51C0 /* RxSwift */; };
+		9359A0952378636A00F8C028 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359A0942378636A00F8C028 /* UserController.swift */; };
+		93CD160D237B134300DFC5D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD160C237B134300DFC5D7 /* User.swift */; };
+		93CD160F237B140C00DFC5D7 /* LendObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD160E237B140C00DFC5D7 /* LendObject.swift */; };
+		93CD1611237B147A00DFC5D7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD1610237B147A00DFC5D7 /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		9336EBD323780ED200AB51C0 /* KUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KUIViewController.swift; sourceTree = "<group>"; };
 		9336EBD423780ED200AB51C0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9336EBD523780ED200AB51C0 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		9359A0942378636A00F8C028 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		93CD160C237B134300DFC5D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		93CD160E237B140C00DFC5D7 /* LendObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObject.swift; sourceTree = "<group>"; };
+		93CD1610237B147A00DFC5D7 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,10 @@
 				9336EBC423780D7200AB51C0 /* Assets.xcassets */,
 				9336EBC623780D7200AB51C0 /* LaunchScreen.storyboard */,
 				9336EBC923780D7200AB51C0 /* Info.plist */,
+				9359A0942378636A00F8C028 /* UserController.swift */,
+				93CD160C237B134300DFC5D7 /* User.swift */,
+				93CD160E237B140C00DFC5D7 /* LendObject.swift */,
+				93CD1610237B147A00DFC5D7 /* Request.swift */,
 			);
 			path = iShareEconomyApp;
 			sourceTree = "<group>";
@@ -168,13 +180,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9336EBDC23780ED200AB51C0 /* LoginController.swift in Sources */,
+				93CD160D237B134300DFC5D7 /* User.swift in Sources */,
 				9336EBD623780ED200AB51C0 /* LoginObject.swift in Sources */,
 				9336EBD823780ED200AB51C0 /* CustomTabBarController.swift in Sources */,
+				9359A0952378636A00F8C028 /* UserController.swift in Sources */,
 				9336EBC023780D7200AB51C0 /* SecondViewController.swift in Sources */,
 				9336EBBA23780D7200AB51C0 /* AppDelegate.swift in Sources */,
 				9336EBD923780ED200AB51C0 /* URL+Helpers.swift in Sources */,
+				93CD160F237B140C00DFC5D7 /* LendObject.swift in Sources */,
 				9336EBD723780ED200AB51C0 /* ThirdViewController.swift in Sources */,
 				9336EBDA23780ED200AB51C0 /* KUIViewController.swift in Sources */,
+				93CD1611237B147A00DFC5D7 /* Request.swift in Sources */,
 				9336EBDB23780ED200AB51C0 /* LoginViewController.swift in Sources */,
 				9336EBBC23780D7200AB51C0 /* SceneDelegate.swift in Sources */,
 			);
