@@ -1,19 +1,20 @@
 //
-//  CustomTabBarController.swift
+//  CustomNaviagationController.swift
 //  iShareEconomyApp
 //
-//  Created by Hu Ocean Li on 09/11/2019.
+//  Created by Hu Ocean Li on 16/11/2019.
 //  Copyright © 2019 Hu Ocean Li. All rights reserved.
 //
 
 import UIKit
 
-class CustomTabBarController: UITabBarController {
+class CustomNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
-        let userController = UserController()
+        self.isToolbarHidden = true
+
         // Do any additional setup after loading the view.
     }
     

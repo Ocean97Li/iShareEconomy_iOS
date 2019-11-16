@@ -15,8 +15,8 @@ class ThirdViewController: UIViewController {
     let userController = UserController()
     let dispose = DisposeBag()
     
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var localLabel: UILabel!
+    //@IBOutlet var nameLabel: UILabel!
+    //@IBOutlet var localLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +25,8 @@ class ThirdViewController: UIViewController {
         userController.loggedInUser.subscribe({
             if let loggedInUser = $0.element as? User {
                 DispatchQueue.main.async {
-                    self.nameLabel.text = "\(loggedInUser.firstname) \(loggedInUser.lastname)"
-                    self.localLabel.text = loggedInUser.address
+                    //self.nameLabel.text = "\(loggedInUser.firstname) \(loggedInUser.lastname)"
+                    //self.localLabel.text = loggedInUser.address
                 }
             }
         }).disposed(by: dispose)

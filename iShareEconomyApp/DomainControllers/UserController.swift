@@ -9,7 +9,6 @@
 import Foundation
 import RxSwift
 
-
 class UserController {
     let loginController = LoginController()
     let dispose = DisposeBag()
@@ -39,13 +38,15 @@ class UserController {
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
              if let usersJSON = responseJSON as? [[String: Any]] {
                 for userJSON in usersJSON {
+                    let lending = LendObjectController.lendobjects(fromJSON: userJSON)
                     let user = User(
                         id: userJSON["_id"] as! String,
                         firstname:  userJSON["firstname"] as! String,
                         lastname: userJSON["lastname"] as! String,
                         address: userJSON["address"] as! String,
                         distance: Int(truncating: userJSON["distance"] as! NSNumber),
-                        rating: Int(truncating: userJSON["rating"] as! NSNumber))
+                        rating: Int(truncating: userJSON["rating"] as! NSNumber),
+                        lending: lending)
                     if user.id == loginObject.id {
                         self.loggedInUser.onNext(user)
                     } else {
