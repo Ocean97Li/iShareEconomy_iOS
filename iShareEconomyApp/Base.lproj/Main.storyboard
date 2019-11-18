@@ -296,11 +296,11 @@
             </objects>
             <point key="canvasLocation" x="964" y="-745"/>
         </scene>
-        <!--Lending-->
+        <!--Sharing-->
         <scene sceneID="1Sb-ww-JEQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ibb-zN-nCz" customClass="CustomNavigationController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Lending" image="hammer" catalog="system" id="ZQX-nK-1P3"/>
+                    <tabBarItem key="tabBarItem" title="Sharing" image="hammer" catalog="system" id="ZQX-nK-1P3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QcP-lO-O4R">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
