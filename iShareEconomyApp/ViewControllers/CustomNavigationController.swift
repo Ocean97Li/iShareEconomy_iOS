@@ -7,26 +7,40 @@
 //
 
 import UIKit
+import RxSwift
 
 class CustomNavigationController: UINavigationController {
 
+    var lending: [LendObject] = []
+    
+    let userController = UserController()
+    let dispose = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         self.isToolbarHidden = true
-
+        self.updateObjectItems()
+        
+        userController.loggedInUser.subscribe({
+            if let loggedInUser = $0.element as? User {
+                self.lending = loggedInUser.lending
+                // Implement Using next in branch
+                self.updateObjectItems()
+            }
+        }).disposed(by: dispose)
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    func updateObjectItems() {
+        if let tableController = self.children[0] as? LendObjectsTableViewController {
+            if self.tabBarController?.tabBar.selectedItem?.title == "Lending" {
+                tableController.objects = self.lending
+                tableController.titleText = "Sharing"
+            } else {
         // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            }
+        }
     }
-    */
 
 }
