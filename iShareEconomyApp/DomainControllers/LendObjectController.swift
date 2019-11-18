@@ -10,10 +10,10 @@ import Foundation
 
 class LendObjectController {
     
-    static func lendobjects(fromJSON userJSON: [String: Any]) -> [LendObject] {
+    static func lendobjects(fromJSON userJSON: [String: Any], usingCollection: String) -> [LendObject] {
         var objects: [LendObject] = []
         
-        if let lendingJSON = userJSON["lending"] as? [[String: Any]] {
+        if let lendingJSON = userJSON[usingCollection] as? [[String: Any]] {
             for objectJSON in lendingJSON {
                 // Find the owner of the object
                 if let ownerJSON = objectJSON["owner"] as? [String: Any],
