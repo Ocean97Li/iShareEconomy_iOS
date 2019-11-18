@@ -16,6 +16,7 @@ struct User {
     let distance: Int
     let rating: Int
     let lending: [LendObject]
+    let using: [LendObject]
     
 //    init(id: String, firstname: String, lastname: String, address: String, distance: Int, rating: Int, lending: [LendObject]) {
 //        self.id = id

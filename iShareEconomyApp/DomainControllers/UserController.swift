@@ -38,7 +38,8 @@ class UserController {
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
              if let usersJSON = responseJSON as? [[String: Any]] {
                 for userJSON in usersJSON {
-                    let lending = LendObjectController.lendobjects(fromJSON: userJSON)
+                    let lending = LendObjectController.lendobjects(fromJSON: userJSON, usingCollection: "lending")
+                    let using = LendObjectController.lendobjects(fromJSON: userJSON, usingCollection: "using")
                     let user = User(
                         id: userJSON["_id"] as! String,
                         firstname:  userJSON["firstname"] as! String,
@@ -46,14 +47,17 @@ class UserController {
                         address: userJSON["address"] as! String,
                         distance: Int(truncating: userJSON["distance"] as! NSNumber),
                         rating: Int(truncating: userJSON["rating"] as! NSNumber),
-                        lending: lending)
+                        lending: lending,
+                        using: using)
                     if user.id == loginObject.id {
                         self.loggedInUser.onNext(user)
+                        print("loggedInuser")
                     } else {
                         users.append(user)
                     }
                 }
                 self.users.onNext(users)
+                print("other users")
             }
         }
         task.resume()

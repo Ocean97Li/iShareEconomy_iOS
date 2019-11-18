@@ -11,6 +11,9 @@ import RxSwift
 
 class LendObjectsTableViewController: UITableViewController {
 
+    let userController = UserController()
+    let dispose = DisposeBag()
+    
     var titleText = ""
     var objects: [LendObject] = []
     
@@ -20,7 +23,14 @@ class LendObjectsTableViewController: UITableViewController {
         self.navigationController?.isToolbarHidden = true
         self.tabBarController?.navigationController?.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
-        title = titleText
+        
+        userController.loggedInUser.subscribe({
+            if let loggedInUser = $0.element as? User {
+                DispatchQueue.main.async {
+                    self.updateObjectItems(user: loggedInUser)
+                }
+            }
+        }).disposed(by: dispose)
     }
 
     // MARK: - Table view data source
@@ -53,6 +63,19 @@ class LendObjectsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return false
+    }
+    
+    func updateObjectItems(user: User) {
+        print(self.tabBarController?.tabBar.selectedItem?.title)
+        if self.tabBarController?.tabBar.selectedItem?.title == "Sharing" {
+            self.objects = user.lending
+            self.titleText = "Sharing"
+        } else {
+            self.objects = user.using
+            self.titleText = "Using"
+        }
+        self.title = self.titleText
+        self.tableView.reloadData()
     }
 
     /*
