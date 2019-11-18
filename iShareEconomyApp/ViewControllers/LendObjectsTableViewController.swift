@@ -11,9 +11,8 @@ import RxSwift
 
 class LendObjectsTableViewController: UITableViewController {
 
-    var lending: [LendObject] = []
-    let userController = UserController()
-    let dispose = DisposeBag()
+    var titleText = ""
+    var objects: [LendObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +20,7 @@ class LendObjectsTableViewController: UITableViewController {
         self.navigationController?.isToolbarHidden = true
         self.tabBarController?.navigationController?.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
-        userController.loggedInUser.subscribe({
-            if let loggedInUser = $0.element as? User {
-                self.lending = loggedInUser.lending
-            }
-        }).disposed(by: dispose)
+        title = titleText
     }
 
     // MARK: - Table view data source
@@ -37,7 +32,7 @@ class LendObjectsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if section == 0 {
-            return lending.count
+            return objects.count
         } else {
             return 0
         }
@@ -48,7 +43,7 @@ class LendObjectsTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.selectionStyle = .none
-        let object = lending[indexPath.row]
+        let object = objects[indexPath.row]
         cell.update(with: object)
         
         return cell
