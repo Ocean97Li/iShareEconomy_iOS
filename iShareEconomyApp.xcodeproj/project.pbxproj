@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9336E346237ED77200C99251 /* LendObjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E345237ED77200C99251 /* LendObjectTableViewCell.swift */; };
+		9336E348237EE67D00C99251 /* LendObjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E347237EE67D00C99251 /* LendObjectsTableViewController.swift */; };
+		9336E34A2380461F00C99251 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E3492380461F00C99251 /* CustomNavigationController.swift */; };
 		9336EBBA23780D7200AB51C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336EBB923780D7200AB51C0 /* AppDelegate.swift */; };
 		9336EBBC23780D7200AB51C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336EBBB23780D7200AB51C0 /* SceneDelegate.swift */; };
 		9336EBC023780D7200AB51C0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336EBBF23780D7200AB51C0 /* SecondViewController.swift */; };
@@ -25,9 +28,15 @@
 		93CD160D237B134300DFC5D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD160C237B134300DFC5D7 /* User.swift */; };
 		93CD160F237B140C00DFC5D7 /* LendObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD160E237B140C00DFC5D7 /* LendObject.swift */; };
 		93CD1611237B147A00DFC5D7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD1610237B147A00DFC5D7 /* Request.swift */; };
+		93CD1613237C7C2E00DFC5D7 /* ObjectOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD1612237C7C2E00DFC5D7 /* ObjectOwner.swift */; };
+		93CD1616237C7CD800DFC5D7 /* LendObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD1615237C7CD800DFC5D7 /* LendObjectType.swift */; };
+		93CD161B237C838B00DFC5D7 /* LendObjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD161A237C838B00DFC5D7 /* LendObjectController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9336E345237ED77200C99251 /* LendObjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObjectTableViewCell.swift; sourceTree = "<group>"; };
+		9336E347237EE67D00C99251 /* LendObjectsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObjectsTableViewController.swift; sourceTree = "<group>"; };
+		9336E3492380461F00C99251 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		9336EBB623780D7200AB51C0 /* iShareEconomyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iShareEconomyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9336EBB923780D7200AB51C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9336EBBB23780D7200AB51C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +56,9 @@
 		93CD160C237B134300DFC5D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		93CD160E237B140C00DFC5D7 /* LendObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObject.swift; sourceTree = "<group>"; };
 		93CD1610237B147A00DFC5D7 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		93CD1612237C7C2E00DFC5D7 /* ObjectOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectOwner.swift; sourceTree = "<group>"; };
+		93CD1615237C7CD800DFC5D7 /* LendObjectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObjectType.swift; sourceTree = "<group>"; };
+		93CD161A237C838B00DFC5D7 /* LendObjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObjectController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,26 +92,64 @@
 		9336EBB823780D7200AB51C0 /* iShareEconomyApp */ = {
 			isa = PBXGroup;
 			children = (
-				9336EBD123780ED200AB51C0 /* CustomTabBarController.swift */,
-				9336EBD323780ED200AB51C0 /* KUIViewController.swift */,
-				9336EBD523780ED200AB51C0 /* LoginController.swift */,
-				9336EBCF23780ED200AB51C0 /* LoginObject.swift */,
-				9336EBD423780ED200AB51C0 /* LoginViewController.swift */,
-				9336EBD023780ED200AB51C0 /* ThirdViewController.swift */,
-				9336EBD223780ED200AB51C0 /* URL+Helpers.swift */,
+				93CD1618237C828E00DFC5D7 /* ViewControllers */,
+				93CD1617237C81B600DFC5D7 /* DomainControllers */,
+				93CD1619237C82BF00DFC5D7 /* Extensions */,
 				9336EBB923780D7200AB51C0 /* AppDelegate.swift */,
 				9336EBBB23780D7200AB51C0 /* SceneDelegate.swift */,
-				9336EBBF23780D7200AB51C0 /* SecondViewController.swift */,
 				9336EBC123780D7200AB51C0 /* Main.storyboard */,
 				9336EBC423780D7200AB51C0 /* Assets.xcassets */,
 				9336EBC623780D7200AB51C0 /* LaunchScreen.storyboard */,
 				9336EBC923780D7200AB51C0 /* Info.plist */,
-				9359A0942378636A00F8C028 /* UserController.swift */,
-				93CD160C237B134300DFC5D7 /* User.swift */,
-				93CD160E237B140C00DFC5D7 /* LendObject.swift */,
-				93CD1610237B147A00DFC5D7 /* Request.swift */,
+				93CD1614237C7C6A00DFC5D7 /* Models */,
 			);
 			path = iShareEconomyApp;
+			sourceTree = "<group>";
+		};
+		93CD1614237C7C6A00DFC5D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9336EBCF23780ED200AB51C0 /* LoginObject.swift */,
+				93CD160C237B134300DFC5D7 /* User.swift */,
+				93CD160E237B140C00DFC5D7 /* LendObject.swift */,
+				93CD1612237C7C2E00DFC5D7 /* ObjectOwner.swift */,
+				93CD1610237B147A00DFC5D7 /* Request.swift */,
+				93CD1615237C7CD800DFC5D7 /* LendObjectType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		93CD1617237C81B600DFC5D7 /* DomainControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9336EBD523780ED200AB51C0 /* LoginController.swift */,
+				9359A0942378636A00F8C028 /* UserController.swift */,
+				93CD161A237C838B00DFC5D7 /* LendObjectController.swift */,
+			);
+			path = DomainControllers;
+			sourceTree = "<group>";
+		};
+		93CD1618237C828E00DFC5D7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9336EBD123780ED200AB51C0 /* CustomTabBarController.swift */,
+				9336EBD323780ED200AB51C0 /* KUIViewController.swift */,
+				9336EBD423780ED200AB51C0 /* LoginViewController.swift */,
+				9336EBD023780ED200AB51C0 /* ThirdViewController.swift */,
+				9336EBBF23780D7200AB51C0 /* SecondViewController.swift */,
+				9336E345237ED77200C99251 /* LendObjectTableViewCell.swift */,
+				9336E347237EE67D00C99251 /* LendObjectsTableViewController.swift */,
+				9336E3492380461F00C99251 /* CustomNavigationController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		93CD1619237C82BF00DFC5D7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9336EBD223780ED200AB51C0 /* URL+Helpers.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,13 +232,19 @@
 				9336EBDC23780ED200AB51C0 /* LoginController.swift in Sources */,
 				93CD160D237B134300DFC5D7 /* User.swift in Sources */,
 				9336EBD623780ED200AB51C0 /* LoginObject.swift in Sources */,
+				93CD1613237C7C2E00DFC5D7 /* ObjectOwner.swift in Sources */,
 				9336EBD823780ED200AB51C0 /* CustomTabBarController.swift in Sources */,
+				9336E346237ED77200C99251 /* LendObjectTableViewCell.swift in Sources */,
+				9336E348237EE67D00C99251 /* LendObjectsTableViewController.swift in Sources */,
 				9359A0952378636A00F8C028 /* UserController.swift in Sources */,
+				9336E34A2380461F00C99251 /* CustomNavigationController.swift in Sources */,
 				9336EBC023780D7200AB51C0 /* SecondViewController.swift in Sources */,
 				9336EBBA23780D7200AB51C0 /* AppDelegate.swift in Sources */,
 				9336EBD923780ED200AB51C0 /* URL+Helpers.swift in Sources */,
 				93CD160F237B140C00DFC5D7 /* LendObject.swift in Sources */,
+				93CD161B237C838B00DFC5D7 /* LendObjectController.swift in Sources */,
 				9336EBD723780ED200AB51C0 /* ThirdViewController.swift in Sources */,
+				93CD1616237C7CD800DFC5D7 /* LendObjectType.swift in Sources */,
 				9336EBDA23780ED200AB51C0 /* KUIViewController.swift in Sources */,
 				93CD1611237B147A00DFC5D7 /* Request.swift in Sources */,
 				9336EBDB23780ED200AB51C0 /* LoginViewController.swift in Sources */,

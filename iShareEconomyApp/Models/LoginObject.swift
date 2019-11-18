@@ -13,17 +13,17 @@ struct LoginObject: Codable {
     let username: String
     let token: String
     
-    private let expires: Date
+    private let _expires: Date
     var expired: Bool {
         get {
-            return expires < Date() // Computed property because we want the current date here
+            return _expires < Date() // Computed property because we want the current date here
         }
     }
     
     init(id: String, username: String, expires: Date, token: String) {
         self.id = id
         self.username = username
-        self.expires = expires
+        self._expires = expires
         self.token = token
     }
 }
