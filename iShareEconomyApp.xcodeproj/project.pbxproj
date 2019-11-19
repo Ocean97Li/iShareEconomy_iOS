@@ -25,6 +25,7 @@
 		9336EBDC23780ED200AB51C0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336EBD523780ED200AB51C0 /* LoginController.swift */; };
 		9336EBEA2378128400AB51C0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9336EBE92378128400AB51C0 /* RxSwift */; };
 		9359A0952378636A00F8C028 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359A0942378636A00F8C028 /* UserController.swift */; };
+		93B53A1123840B240090235E /* ObjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B53A1023840B240090235E /* ObjectDetailViewController.swift */; };
 		93CD160D237B134300DFC5D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD160C237B134300DFC5D7 /* User.swift */; };
 		93CD160F237B140C00DFC5D7 /* LendObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD160E237B140C00DFC5D7 /* LendObject.swift */; };
 		93CD1611237B147A00DFC5D7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD1610237B147A00DFC5D7 /* Request.swift */; };
