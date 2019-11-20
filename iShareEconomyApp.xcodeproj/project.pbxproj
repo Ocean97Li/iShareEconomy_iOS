@@ -25,6 +25,8 @@
 		9336EBDC23780ED200AB51C0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336EBD523780ED200AB51C0 /* LoginController.swift */; };
 		9336EBEA2378128400AB51C0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9336EBE92378128400AB51C0 /* RxSwift */; };
 		9359A0952378636A00F8C028 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359A0942378636A00F8C028 /* UserController.swift */; };
+		938BD7BE23841835001C06B8 /* LendObjectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 938BD7BD23841835001C06B8 /* LendObjectView.xib */; };
+		938BD7C123841A9A001C06B8 /* LendObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BD7C023841A9A001C06B8 /* LendObjectView.swift */; };
 		93B53A1123840B240090235E /* ObjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B53A1023840B240090235E /* ObjectDetailViewController.swift */; };
 		93CD160D237B134300DFC5D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD160C237B134300DFC5D7 /* User.swift */; };
 		93CD160F237B140C00DFC5D7 /* LendObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD160E237B140C00DFC5D7 /* LendObject.swift */; };
@@ -54,6 +56,9 @@
 		9336EBD423780ED200AB51C0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9336EBD523780ED200AB51C0 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		9359A0942378636A00F8C028 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		938BD7BD23841835001C06B8 /* LendObjectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LendObjectView.xib; sourceTree = "<group>"; };
+		938BD7C023841A9A001C06B8 /* LendObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObjectView.swift; sourceTree = "<group>"; };
+		93B53A1023840B240090235E /* ObjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetailViewController.swift; sourceTree = "<group>"; };
 		93CD160C237B134300DFC5D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		93CD160E237B140C00DFC5D7 /* LendObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObject.swift; sourceTree = "<group>"; };
 		93CD1610237B147A00DFC5D7 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -93,6 +98,7 @@
 		9336EBB823780D7200AB51C0 /* iShareEconomyApp */ = {
 			isa = PBXGroup;
 			children = (
+				938BD7BF23841A62001C06B8 /* Views */,
 				93CD1618237C828E00DFC5D7 /* ViewControllers */,
 				93CD1617237C81B600DFC5D7 /* DomainControllers */,
 				93CD1619237C82BF00DFC5D7 /* Extensions */,
@@ -105,6 +111,15 @@
 				93CD1614237C7C6A00DFC5D7 /* Models */,
 			);
 			path = iShareEconomyApp;
+			sourceTree = "<group>";
+		};
+		938BD7BF23841A62001C06B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				938BD7BD23841835001C06B8 /* LendObjectView.xib */,
+				938BD7C023841A9A001C06B8 /* LendObjectView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		93CD1614237C7C6A00DFC5D7 /* Models */ = {
@@ -141,6 +156,7 @@
 				9336E345237ED77200C99251 /* LendObjectTableViewCell.swift */,
 				9336E347237EE67D00C99251 /* LendObjectsTableViewController.swift */,
 				9336E3492380461F00C99251 /* CustomNavigationController.swift */,
+				93B53A1023840B240090235E /* ObjectDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -217,6 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				938BD7BE23841835001C06B8 /* LendObjectView.xib in Resources */,
 				9336EBC823780D7200AB51C0 /* LaunchScreen.storyboard in Resources */,
 				9336EBC523780D7200AB51C0 /* Assets.xcassets in Resources */,
 				9336EBC323780D7200AB51C0 /* Main.storyboard in Resources */,
@@ -236,6 +253,8 @@
 				93CD1613237C7C2E00DFC5D7 /* ObjectOwner.swift in Sources */,
 				9336EBD823780ED200AB51C0 /* CustomTabBarController.swift in Sources */,
 				9336E346237ED77200C99251 /* LendObjectTableViewCell.swift in Sources */,
+				938BD7C123841A9A001C06B8 /* LendObjectView.swift in Sources */,
+				93B53A1123840B240090235E /* ObjectDetailViewController.swift in Sources */,
 				9336E348237EE67D00C99251 /* LendObjectsTableViewController.swift in Sources */,
 				9359A0952378636A00F8C028 /* UserController.swift in Sources */,
 				9336E34A2380461F00C99251 /* CustomNavigationController.swift in Sources */,
