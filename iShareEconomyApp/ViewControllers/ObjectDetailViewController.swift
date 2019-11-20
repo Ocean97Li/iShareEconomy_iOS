@@ -23,11 +23,7 @@ class ObjectDetailViewController: UIViewController {
         title = "\(object!.name.capitalized) detail"
         lendObjectView.object = object
         objectOwnerNameLabel.text = object?.owner.userName
-//        objectCurrentUserNameLabel.text = object?.waitinglist[0].userName
-    
-        // Do any additional setup after loading the view.
     }
-    
 
     /*
     // MARK: - Navigation

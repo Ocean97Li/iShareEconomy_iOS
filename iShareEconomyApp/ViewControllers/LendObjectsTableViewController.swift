@@ -75,7 +75,6 @@ class LendObjectsTableViewController: UITableViewController {
     }
     
     func updateObjectItems(user: User) {
-        print(self.tabBarController?.tabBar.selectedItem?.title)
         if self.tabBarController?.tabBar.selectedItem?.title == "Sharing" {
             self.objects = user.lending
             self.titleText = "Sharing"
