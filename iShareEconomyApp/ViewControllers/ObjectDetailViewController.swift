@@ -9,12 +9,22 @@
 import UIKit
 
 class ObjectDetailViewController: UIViewController {
-
+    
     var object: LendObject? = nil
+    
+    @IBOutlet var lendObjectView: LendObjectView!
+    
+    @IBOutlet var objectOwnerNameLabel: UILabel!
+    
+    @IBOutlet var objectCurrentUserNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "\(object!.name.capitalized) detail"
+        lendObjectView.object = object
+        objectOwnerNameLabel.text = object?.owner.userName
+//        objectCurrentUserNameLabel.text = object?.waitinglist[0].userName
+    
         // Do any additional setup after loading the view.
     }
     
@@ -28,5 +38,4 @@ class ObjectDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
