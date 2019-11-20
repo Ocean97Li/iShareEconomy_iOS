@@ -43,7 +43,11 @@ class LendObjectView: UIView {
         iconImageView.image = image
         titleLabel.text = object.name
         descriptionLabel.text = object.description
-        waitingListLabel.text = String(object.waitinglist.count)
+        if object.currentUser == nil {
+             waitingListLabel.text = String(object.waitinglist.count)
+        } else {
+            waitingListLabel.text = String(object.waitinglist.count+1)
+        }
     }
     
     override init(frame: CGRect) {

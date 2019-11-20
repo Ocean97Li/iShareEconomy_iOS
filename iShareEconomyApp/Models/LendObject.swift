@@ -11,7 +11,8 @@ import Foundation
 struct LendObject {
     let id: String
     let owner: ObjectOwner
-    let waitinglist: [ObjectOwner]
+    let waitinglist: [ObjectUser]
+    let currentUser: ObjectUser?
     let name: String
     let description: String
     let type: LendObjectType

@@ -51,13 +51,11 @@ class UserController {
                         using: using)
                     if user.id == loginObject.id {
                         self.loggedInUser.onNext(user)
-                        print("loggedInuser")
                     } else {
                         users.append(user)
                     }
                 }
                 self.users.onNext(users)
-                print("other users")
             }
         }
         task.resume()

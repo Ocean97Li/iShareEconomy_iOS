@@ -18,11 +18,19 @@ class ObjectDetailViewController: UIViewController {
     
     @IBOutlet var objectCurrentUserNameLabel: UILabel!
     
+    @IBOutlet var timePeriodLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "\(object!.name.capitalized) detail"
         lendObjectView.object = object
         objectOwnerNameLabel.text = object?.owner.userName
+        if let currentUser = object?.currentUser {
+            objectCurrentUserNameLabel.text = currentUser.userName
+            timePeriodLabel.text = "From \(currentUser.fromDate.toShortString()) to \(currentUser.toDate.toShortString())"
+        } else {
+            timePeriodLabel.isHidden = true
+        }
     }
 
     /*

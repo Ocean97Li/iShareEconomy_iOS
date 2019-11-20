@@ -238,12 +238,23 @@
                                                             <constraint firstAttribute="height" constant="80" id="eU9-Cn-ZDZ"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Current User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4c-8p-D1b">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AdH-bg-RHv">
                                                         <rect key="frame" x="85" y="0.0" width="274" height="80"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="No Current User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4c-8p-D1b">
+                                                                <rect key="frame" x="0.0" y="0.0" width="274" height="37.666666666666664"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="from date to date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFE-Ti-BRG">
+                                                                <rect key="frame" x="0.0" y="42.666666666666629" width="274" height="37.333333333333343"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNZ-NM-JuN">
                                                         <rect key="frame" x="364" y="0.0" width="50" height="80"/>
                                                         <constraints>
@@ -270,7 +281,9 @@
                     <navigationItem key="navigationItem" id="IBM-bM-ZCr"/>
                     <connections>
                         <outlet property="lendObjectView" destination="fiZ-0Y-kgE" id="YGD-Pq-yYD"/>
+                        <outlet property="objectCurrentUserNameLabel" destination="d4c-8p-D1b" id="f4o-GQ-DZH"/>
                         <outlet property="objectOwnerNameLabel" destination="gl0-Vq-FPE" id="eky-ck-Hxx"/>
+                        <outlet property="timePeriodLabel" destination="SFE-Ti-BRG" id="Dbc-PE-xaK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CSh-V9-ix5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

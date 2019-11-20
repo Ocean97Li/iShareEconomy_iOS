@@ -31,9 +31,10 @@
 		93CD160D237B134300DFC5D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD160C237B134300DFC5D7 /* User.swift */; };
 		93CD160F237B140C00DFC5D7 /* LendObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD160E237B140C00DFC5D7 /* LendObject.swift */; };
 		93CD1611237B147A00DFC5D7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD1610237B147A00DFC5D7 /* Request.swift */; };
-		93CD1613237C7C2E00DFC5D7 /* ObjectOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD1612237C7C2E00DFC5D7 /* ObjectOwner.swift */; };
+		93CD1613237C7C2E00DFC5D7 /* ObjectUserOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD1612237C7C2E00DFC5D7 /* ObjectUserOwner.swift */; };
 		93CD1616237C7CD800DFC5D7 /* LendObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD1615237C7CD800DFC5D7 /* LendObjectType.swift */; };
 		93CD161B237C838B00DFC5D7 /* LendObjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD161A237C838B00DFC5D7 /* LendObjectController.swift */; };
+		93FB2EDB238590F500FE220E /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FB2EDA238590F500FE220E /* DateFormatting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,9 +63,10 @@
 		93CD160C237B134300DFC5D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		93CD160E237B140C00DFC5D7 /* LendObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObject.swift; sourceTree = "<group>"; };
 		93CD1610237B147A00DFC5D7 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		93CD1612237C7C2E00DFC5D7 /* ObjectOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectOwner.swift; sourceTree = "<group>"; };
+		93CD1612237C7C2E00DFC5D7 /* ObjectUserOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectUserOwner.swift; sourceTree = "<group>"; };
 		93CD1615237C7CD800DFC5D7 /* LendObjectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObjectType.swift; sourceTree = "<group>"; };
 		93CD161A237C838B00DFC5D7 /* LendObjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObjectController.swift; sourceTree = "<group>"; };
+		93FB2EDA238590F500FE220E /* DateFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +130,7 @@
 				9336EBCF23780ED200AB51C0 /* LoginObject.swift */,
 				93CD160C237B134300DFC5D7 /* User.swift */,
 				93CD160E237B140C00DFC5D7 /* LendObject.swift */,
-				93CD1612237C7C2E00DFC5D7 /* ObjectOwner.swift */,
+				93CD1612237C7C2E00DFC5D7 /* ObjectUserOwner.swift */,
 				93CD1610237B147A00DFC5D7 /* Request.swift */,
 				93CD1615237C7CD800DFC5D7 /* LendObjectType.swift */,
 			);
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				9336EBD223780ED200AB51C0 /* URL+Helpers.swift */,
+				93FB2EDA238590F500FE220E /* DateFormatting.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,12 +253,13 @@
 				9336EBDC23780ED200AB51C0 /* LoginController.swift in Sources */,
 				93CD160D237B134300DFC5D7 /* User.swift in Sources */,
 				9336EBD623780ED200AB51C0 /* LoginObject.swift in Sources */,
-				93CD1613237C7C2E00DFC5D7 /* ObjectOwner.swift in Sources */,
+				93CD1613237C7C2E00DFC5D7 /* ObjectUserOwner.swift in Sources */,
 				9336EBD823780ED200AB51C0 /* CustomTabBarController.swift in Sources */,
 				9336E346237ED77200C99251 /* LendObjectTableViewCell.swift in Sources */,
 				938BD7C123841A9A001C06B8 /* LendObjectView.swift in Sources */,
 				93B53A1123840B240090235E /* ObjectDetailViewController.swift in Sources */,
 				9336E348237EE67D00C99251 /* LendObjectsTableViewController.swift in Sources */,
+				93FB2EDB238590F500FE220E /* DateFormatting.swift in Sources */,
 				9359A0952378636A00F8C028 /* UserController.swift in Sources */,
 				9336E34A2380461F00C99251 /* CustomNavigationController.swift in Sources */,
 				9336EBC023780D7200AB51C0 /* SecondViewController.swift in Sources */,
