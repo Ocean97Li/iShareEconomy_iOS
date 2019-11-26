@@ -19,7 +19,4 @@ class CustomNavigationController: UINavigationController {
         self.isToolbarHidden = true    
         // Do any additional setup after loading the view.
     }
-    
-    
-
 }

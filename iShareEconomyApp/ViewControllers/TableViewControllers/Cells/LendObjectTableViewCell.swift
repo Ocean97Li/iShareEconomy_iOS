@@ -20,8 +20,7 @@ class LendObjectTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func update(with lendObject: LendObject) {
+    func update(_ lendObject: LendObject) {
         lendObjectView.object = lendObject
-        lendObjectView.update()
     }
 }
