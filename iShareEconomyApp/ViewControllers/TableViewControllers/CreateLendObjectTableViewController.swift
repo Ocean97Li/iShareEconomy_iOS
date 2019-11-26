@@ -1,90 +1,75 @@
 //
-//  LendObjectsTableViewController.swift
+//  CreateLendObjectTableViewController.swift
 //  iShareEconomyApp
 //
-//  Created by Hu Ocean Li on 15/11/2019.
+//  Created by Hu Ocean Li on 26/11/2019.
 //  Copyright © 2019 Hu Ocean Li. All rights reserved.
 //
 
 import UIKit
-import RxSwift
 
-class LendObjectsTableViewController: UITableViewController {
-
-    let userController = UserController()
-    let dispose = DisposeBag()
+class CreateLendObjectTableViewController: UITableViewController {
     
-    var titleText = ""
-    var objects: [LendObject] = []
+    var objectTitle: String = ""
+    var objectDescription: String = ""
+    var objectType: LendObjectType = .Tool
+    
+    @IBAction func typeSelectAction(_ sender: UIButton) {
+        switch sender.accessibilityIdentifier {
+        case "Tool":
+            self.objectType = .Tool
+        case "Service":
+        self.objectType = .Service
+        case "Transportation":
+            self.objectType = .Transport
+        default:
+            self.objectType = .Tool
+        }
+    }
+    
+    @IBOutlet var nameTextfield: UITextField!
+    
+    @IBOutlet var descriptionTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.hidesBackButton = true
-        self.navigationController?.isToolbarHidden = true
-        self.tabBarController?.navigationController?.navigationItem.hidesBackButton = true
-        // Do any additional setup after loading the view.
-        self.tableView.allowsSelection = true
-        userController.loggedInUser.subscribe({
-            if let loggedInUser = $0.element as? User {
-                DispatchQueue.main.async {
-                    self.updateObjectItems(user: loggedInUser)
-                }
-            }
-        }).disposed(by: dispose)
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let object = objects[indexPath.row]
-        if let viewController = storyboard?.instantiateViewController(identifier: "ObjectDetail") as? ObjectDetailTableViewController {
-            viewController.object = object
-            navigationController?.pushViewController(viewController, animated: true)
-        }
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if section == 0 {
-            return objects.count
-        } else {
-            return 0
-        }
+        return 0
     }
 
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LendObjectCell", for: indexPath) as! LendObjectTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        cell.selectionStyle = .none
-        let object = objects[indexPath.row]
-        cell.update(object)
-        
+
         return cell
     }
+    */
 
+    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    
-    func updateObjectItems(user: User) {
-        if self.tabBarController?.tabBar.selectedItem?.title == "Sharing" {
-            self.objects = user.lending
-            self.titleText = "Sharing"
-        } else {
-            self.objects = user.using
-            self.titleText = "Using"
-            self.navigationItem.rightBarButtonItems?.removeAll()
-        }
-        self.title = self.titleText
-        self.tableView.reloadData()
-    }
+    */
 
     /*
     // Override to support editing the table view.
@@ -98,10 +83,12 @@ class LendObjectsTableViewController: UITableViewController {
     }
     */
 
+    /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
     }
+    */
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -110,6 +97,8 @@ class LendObjectsTableViewController: UITableViewController {
         return true
     }
     */
+
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -117,5 +106,6 @@ class LendObjectsTableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
+    */
 
 }
