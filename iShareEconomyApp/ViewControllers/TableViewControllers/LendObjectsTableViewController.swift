@@ -23,7 +23,7 @@ class LendObjectsTableViewController: UITableViewController {
         self.navigationController?.isToolbarHidden = true
         self.tabBarController?.navigationController?.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
-        
+        self.tableView.allowsSelection = true
         userController.loggedInUser.subscribe({
             if let loggedInUser = $0.element as? User {
                 DispatchQueue.main.async {
@@ -37,6 +37,14 @@ class LendObjectsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let object = objects[indexPath.row]
+        if let viewController = storyboard?.instantiateViewController(identifier: "ObjectDetail") as? ObjectDetailTableViewController {
+            viewController.object = object
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,7 +62,7 @@ class LendObjectsTableViewController: UITableViewController {
         // Configure the cell...
         cell.selectionStyle = .none
         let object = objects[indexPath.row]
-        cell.update(with: object)
+        cell.update(object)
         
         return cell
     }
@@ -62,11 +70,10 @@ class LendObjectsTableViewController: UITableViewController {
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return false
+        return true
     }
     
     func updateObjectItems(user: User) {
-        print(self.tabBarController?.tabBar.selectedItem?.title)
         if self.tabBarController?.tabBar.selectedItem?.title == "Sharing" {
             self.objects = user.lending
             self.titleText = "Sharing"
@@ -90,12 +97,10 @@ class LendObjectsTableViewController: UITableViewController {
     }
     */
 
-    /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
     }
-    */
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -104,8 +109,6 @@ class LendObjectsTableViewController: UITableViewController {
         return true
     }
     */
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -113,6 +116,5 @@ class LendObjectsTableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
