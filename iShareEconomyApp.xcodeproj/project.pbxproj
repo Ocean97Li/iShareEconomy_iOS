@@ -24,6 +24,10 @@
 		9336EBDB23780ED200AB51C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336EBD423780ED200AB51C0 /* LoginViewController.swift */; };
 		9336EBDC23780ED200AB51C0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336EBD523780ED200AB51C0 /* LoginController.swift */; };
 		9336EBEA2378128400AB51C0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9336EBE92378128400AB51C0 /* RxSwift */; };
+		935858EA23869E7F0052C623 /* ObjectUserOwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935858E923869E7F0052C623 /* ObjectUserOwnerView.swift */; };
+		935858EC2386A1D00052C623 /* ObjectUserOwnerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 935858EB2386A1D00052C623 /* ObjectUserOwnerView.xib */; };
+		935858EE2386B8110052C623 /* ObjectDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935858ED2386B8110052C623 /* ObjectDetailTableViewController.swift */; };
+		935858F02386BE1C0052C623 /* ObjectUserOwnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935858EF2386BE1C0052C623 /* ObjectUserOwnerTableViewCell.swift */; };
 		9359A0952378636A00F8C028 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359A0942378636A00F8C028 /* UserController.swift */; };
 		938BD7BE23841835001C06B8 /* LendObjectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 938BD7BD23841835001C06B8 /* LendObjectView.xib */; };
 		938BD7C123841A9A001C06B8 /* LendObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BD7C023841A9A001C06B8 /* LendObjectView.swift */; };
@@ -56,6 +60,10 @@
 		9336EBD323780ED200AB51C0 /* KUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KUIViewController.swift; sourceTree = "<group>"; };
 		9336EBD423780ED200AB51C0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9336EBD523780ED200AB51C0 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		935858E923869E7F0052C623 /* ObjectUserOwnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectUserOwnerView.swift; sourceTree = "<group>"; };
+		935858EB2386A1D00052C623 /* ObjectUserOwnerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ObjectUserOwnerView.xib; sourceTree = "<group>"; };
+		935858ED2386B8110052C623 /* ObjectDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetailTableViewController.swift; sourceTree = "<group>"; };
+		935858EF2386BE1C0052C623 /* ObjectUserOwnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectUserOwnerTableViewCell.swift; sourceTree = "<group>"; };
 		9359A0942378636A00F8C028 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		938BD7BD23841835001C06B8 /* LendObjectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LendObjectView.xib; sourceTree = "<group>"; };
 		938BD7C023841A9A001C06B8 /* LendObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObjectView.swift; sourceTree = "<group>"; };
@@ -115,11 +123,66 @@
 			path = iShareEconomyApp;
 			sourceTree = "<group>";
 		};
-		938BD7BF23841A62001C06B8 /* Views */ = {
+		935858E723869DF90052C623 /* LendObjectView */ = {
 			isa = PBXGroup;
 			children = (
 				938BD7BD23841835001C06B8 /* LendObjectView.xib */,
 				938BD7C023841A9A001C06B8 /* LendObjectView.swift */,
+			);
+			path = LendObjectView;
+			sourceTree = "<group>";
+		};
+		935858E823869E070052C623 /* ObjectUserOwnerView */ = {
+			isa = PBXGroup;
+			children = (
+				935858E923869E7F0052C623 /* ObjectUserOwnerView.swift */,
+				935858EB2386A1D00052C623 /* ObjectUserOwnerView.xib */,
+			);
+			path = ObjectUserOwnerView;
+			sourceTree = "<group>";
+		};
+		935858F12386C4000052C623 /* TableViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				935858F42386C4C50052C623 /* Cells */,
+				9336E347237EE67D00C99251 /* LendObjectsTableViewController.swift */,
+				935858ED2386B8110052C623 /* ObjectDetailTableViewController.swift */,
+			);
+			path = TableViewControllers;
+			sourceTree = "<group>";
+		};
+		935858F22386C42D0052C623 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				9336E3492380461F00C99251 /* CustomNavigationController.swift */,
+				9336EBD123780ED200AB51C0 /* CustomTabBarController.swift */,
+				9336EBD323780ED200AB51C0 /* KUIViewController.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		935858F42386C4C50052C623 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				935858EF2386BE1C0052C623 /* ObjectUserOwnerTableViewCell.swift */,
+				9336E345237ED77200C99251 /* LendObjectTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		935858F52386C4E80052C623 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9336EBD423780ED200AB51C0 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		938BD7BF23841A62001C06B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				935858E823869E070052C623 /* ObjectUserOwnerView */,
+				935858E723869DF90052C623 /* LendObjectView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,14 +213,11 @@
 		93CD1618237C828E00DFC5D7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9336EBD123780ED200AB51C0 /* CustomTabBarController.swift */,
-				9336EBD323780ED200AB51C0 /* KUIViewController.swift */,
-				9336EBD423780ED200AB51C0 /* LoginViewController.swift */,
+				935858F22386C42D0052C623 /* Controls */,
+				935858F12386C4000052C623 /* TableViewControllers */,
+				935858F52386C4E80052C623 /* Login */,
 				9336EBD023780ED200AB51C0 /* ThirdViewController.swift */,
 				9336EBBF23780D7200AB51C0 /* SecondViewController.swift */,
-				9336E345237ED77200C99251 /* LendObjectTableViewCell.swift */,
-				9336E347237EE67D00C99251 /* LendObjectsTableViewController.swift */,
-				9336E3492380461F00C99251 /* CustomNavigationController.swift */,
 				93B53A1023840B240090235E /* ObjectDetailViewController.swift */,
 			);
 			path = ViewControllers;
@@ -238,6 +298,7 @@
 			files = (
 				938BD7BE23841835001C06B8 /* LendObjectView.xib in Resources */,
 				9336EBC823780D7200AB51C0 /* LaunchScreen.storyboard in Resources */,
+				935858EC2386A1D00052C623 /* ObjectUserOwnerView.xib in Resources */,
 				9336EBC523780D7200AB51C0 /* Assets.xcassets in Resources */,
 				9336EBC323780D7200AB51C0 /* Main.storyboard in Resources */,
 			);
@@ -254,6 +315,7 @@
 				93CD160D237B134300DFC5D7 /* User.swift in Sources */,
 				9336EBD623780ED200AB51C0 /* LoginObject.swift in Sources */,
 				93CD1613237C7C2E00DFC5D7 /* ObjectUserOwner.swift in Sources */,
+				935858EA23869E7F0052C623 /* ObjectUserOwnerView.swift in Sources */,
 				9336EBD823780ED200AB51C0 /* CustomTabBarController.swift in Sources */,
 				9336E346237ED77200C99251 /* LendObjectTableViewCell.swift in Sources */,
 				938BD7C123841A9A001C06B8 /* LendObjectView.swift in Sources */,
@@ -272,6 +334,8 @@
 				9336EBDA23780ED200AB51C0 /* KUIViewController.swift in Sources */,
 				93CD1611237B147A00DFC5D7 /* Request.swift in Sources */,
 				9336EBDB23780ED200AB51C0 /* LoginViewController.swift in Sources */,
+				935858F02386BE1C0052C623 /* ObjectUserOwnerTableViewCell.swift in Sources */,
+				935858EE2386B8110052C623 /* ObjectDetailTableViewController.swift in Sources */,
 				9336EBBC23780D7200AB51C0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

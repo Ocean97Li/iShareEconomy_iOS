@@ -41,8 +41,7 @@ class LendObjectsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let object = objects[indexPath.row]
-        
-        if let viewController = storyboard?.instantiateViewController(identifier: "ObjectDetail") as? ObjectDetailViewController {
+        if let viewController = storyboard?.instantiateViewController(identifier: "ObjectDetail") as? ObjectDetailTableViewController {
             viewController.object = object
             navigationController?.pushViewController(viewController, animated: true)
         }
@@ -63,7 +62,7 @@ class LendObjectsTableViewController: UITableViewController {
         // Configure the cell...
         cell.selectionStyle = .none
         let object = objects[indexPath.row]
-        cell.update(with: object)
+        cell.update(object)
         
         return cell
     }
