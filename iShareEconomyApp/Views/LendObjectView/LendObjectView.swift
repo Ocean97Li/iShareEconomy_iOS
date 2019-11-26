@@ -25,8 +25,7 @@ class LendObjectView: UIView {
     
     let kCONTENT_XIB_NAME = "LendObjectView"
     
-    
-    func update() {
+    private func update() {
         guard let object = self.object else { return }
         var image: UIImage
         switch object.type {
@@ -67,6 +66,7 @@ class LendObjectView: UIView {
 }
 
 extension UIView {
+    
     func fixInView(_ container: UIView!) -> Void{
         self.translatesAutoresizingMaskIntoConstraints = false;
         self.frame = container.frame;
