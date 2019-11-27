@@ -97,4 +97,20 @@ class UserController {
         }
         task.resume()
     }
+    
+    public func deleteObject(withId id: String) {
+        let url = URL(string: "https://ishare-economy-backend.herokuapp.com/API/users/\(self._loggedInObject!.id)/lending/\(id)")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "delete"
+        request.setValue("Bearer \(self._loggedInObject!.token)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let _ = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            // Delete Succesfull
+        }
+        task.resume()
+    }
 }
