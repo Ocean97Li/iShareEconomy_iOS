@@ -13,7 +13,7 @@ class LoginViewController: KUIViewController {
     
     var user: String = ""
     var password: String = ""
-    let loginController = LoginController()
+    let loginController = LoginController.shared
     let dispose = DisposeBag()
     
     @IBOutlet var usernameTextfield: UITextField!

@@ -11,7 +11,7 @@ import RxSwift
 
 class LendObjectsTableViewController: UITableViewController {
 
-    let userController = UserController()
+    let userController = UserController.shared
     let dispose = DisposeBag()
     
     var titleText = ""
@@ -111,6 +111,10 @@ class LendObjectsTableViewController: UITableViewController {
     }
     */
     // MARK: - Navigation
+    
+    @IBAction func objectAddedUnwindAction(unwindSegue: UIStoryboardSegue) {
+        
+    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
