@@ -10,4 +10,15 @@ import Foundation
 
 enum LendObjectType {
     case Tool, Service, Transport
+    
+    func toString() -> String {
+        switch self {
+        case .Tool:
+            return "tool"
+        case .Service:
+            return "service"
+        case .Transport:
+            return "transport"
+        }
+    }
 }

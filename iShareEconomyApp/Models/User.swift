@@ -15,16 +15,10 @@ struct User {
     let address: String
     let distance: Int
     let rating: Int
-    let lending: [LendObject]
-    let using: [LendObject]
+    var lending: [LendObject]
+    var using: [LendObject]
     
-//    init(id: String, firstname: String, lastname: String, address: String, distance: Int, rating: Int, lending: [LendObject]) {
-//        self.id = id
-//        self.firstname = firstname
-//        self.lastname = lastname
-//        self.address = address
-//        self.distance = distance
-//        self.rating = rating
-//        self.lending = lending
-//    }
+    var fullname: String {
+        return "\(firstname) \(lastname)"
+    }
 }

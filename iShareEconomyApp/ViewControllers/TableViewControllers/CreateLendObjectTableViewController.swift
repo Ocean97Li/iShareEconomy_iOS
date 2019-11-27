@@ -7,105 +7,99 @@
 //
 
 import UIKit
+import RxSwift
 
 class CreateLendObjectTableViewController: UITableViewController {
     
-    var objectTitle: String = ""
-    var objectDescription: String = ""
-    var objectType: LendObjectType = .Tool
+    let userController = UserController.shared
+    let dispose = DisposeBag()
+    
+    var objectTitle: String? = nil
+    var objectDescription: String? = nil
+    var objectType: LendObjectType? = nil
+    
+    var user: User? = nil
+    
+    var object: LendObject? = nil
+    
+    @IBOutlet var typeButtons: [UIButton]!
     
     @IBAction func typeSelectAction(_ sender: UIButton) {
-        switch sender.accessibilityIdentifier {
+        for button in typeButtons {
+            if button.accessibilityIdentifier == sender.accessibilityIdentifier {
+                button.tintColor = .systemBlue
+            } else {
+                button.tintColor = .black
+            }
+        }
+        switch sender.accessibilityIdentifier! {
         case "Tool":
             self.objectType = .Tool
         case "Service":
-        self.objectType = .Service
-        case "Transportation":
+            self.objectType = .Service
+        case "Transport":
             self.objectType = .Transport
         default:
-            self.objectType = .Tool
+            self.objectType = nil
         }
+        self.enableDisableAddButton()
     }
     
     @IBOutlet var nameTextfield: UITextField!
     
-    @IBOutlet var descriptionTextView: UITextView!
+    @IBOutlet var descriptionTextfield: UITextField!
+    
+    @IBOutlet var addButton: UIButton!
+    
+    @IBAction func createObjectAction(_ sender: UIButton) {
+        if let title = objectTitle,
+            let type = objectType,
+            let description = objectDescription,
+            let user = self.user
+            {
+                userController.addObject(title: title, description: description, type: type, ownerId: user.id, ownerName: user.fullname)
+        }
+    }
+    
+    @IBAction func enableDisableAddButton() {
+        objectTitle = nameTextfield.text
+        objectDescription = descriptionTextfield.text
+        if let _ = self.objectType,
+            let title = self.objectTitle,
+            let description = self.objectDescription {
+            if !title.isEmpty && title.count > 2 &&
+                !description.isEmpty && description.count > 2 {
+                toggleAddButton(true)
+            } else {
+               toggleAddButton(false)
+            }
+        } else {
+            toggleAddButton(false)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        toggleAddButton(false)
+        UserController.shared.loggedInUser.subscribe({
+            if let loggedInUser = $0.element as? User {
+                self.user = loggedInUser
+            }
+        }).disposed(by: dispose)
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    private func toggleAddButton(_ bool: Bool) {
+        addButton.isEnabled = bool
+        if bool {
+            addButton.backgroundColor = .black
+        } else {
+            addButton.backgroundColor = .lightGray
+        }
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
-
 }
