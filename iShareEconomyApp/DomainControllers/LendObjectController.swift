@@ -14,31 +14,38 @@ class LendObjectController {
         var objects: [LendObject] = []
         
         if let lendingJSON = userJSON[usingCollection] as? [[String: Any]] {
-            
             for objectJSON in lendingJSON {
                 // Find the owner of the object
-                if let ownerJSON = objectJSON["owner"] as? [String: Any],
-                    let owner = extractObjectOwnerFromJSON(ownerJSON),
-                    let id = objectJSON["_id"] as? String,
-                    let waitinglistJSON = objectJSON["waitinglist"] as? [[String: Any]],
-                    let waitinglist = extractWaitingListFromJSON(waitinglistJSON),
-                    let name = objectJSON["name"] as? String,
-                    let description = objectJSON["description"] as? String,
-                    let rules = objectJSON["rules"] as? String,
-                    let typeString = objectJSON["type"] as? String,
-                    let type = extractTypeFromString(typeString) {
-                        var currentUser: ObjectUser? = nil
-                        
-                        if let currentUserJSON = objectJSON["user"] as? [String: Any] {
-                            currentUser = extractObjectUserFromJSON(currentUserJSON)
-                        }
-                        let newObject = LendObject(id: id, owner: owner, waitinglist: waitinglist, currentUser: currentUser, name: name, description: description, type: type, rules: rules)
-                        objects.append(newObject)
+                if let newObject = lendObject(fromJSON:  objectJSON) {
+                    objects.append(newObject)
                 }
             }
         }
         
         return objects
+    }
+    
+    static func lendObject(fromJSON objectJSON: [String: Any]) -> LendObject? {        if let ownerJSON = objectJSON["owner"] as? [String: Any],
+            let owner = extractObjectOwnerFromJSON(ownerJSON),
+            let id = objectJSON["_id"] as? String,
+            let waitinglistJSON = objectJSON["waitinglist"] as? [[String: Any]],
+            let waitinglist = extractWaitingListFromJSON(waitinglistJSON),
+            let name = objectJSON["name"] as? String,
+            let description = objectJSON["description"] as? String,
+            let typeString = objectJSON["type"] as? String,
+            let type = extractTypeFromString(typeString) {
+                let rules = objectJSON["rules"] as? String ?? ""
+                var currentUser: ObjectUser? = nil
+                
+                if let currentUserJSON = objectJSON["user"] as? [String: Any] {
+                    currentUser = extractObjectUserFromJSON(currentUserJSON)
+                }
+                let newObject = LendObject(id: id, owner: owner, waitinglist: waitinglist, currentUser: currentUser, name: name, description: description, type: type, rules: rules)
+        
+               return newObject
+        }
+        
+        return nil
     }
     
     private static func extractObjectOwnerFromJSON(_ ownerJSON: [String: Any]) -> ObjectOwner? {

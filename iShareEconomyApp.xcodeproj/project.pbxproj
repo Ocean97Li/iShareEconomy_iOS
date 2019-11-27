@@ -27,6 +27,7 @@
 		935858EE2386B8110052C623 /* ObjectDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935858ED2386B8110052C623 /* ObjectDetailTableViewController.swift */; };
 		935858F02386BE1C0052C623 /* ObjectUserOwnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935858EF2386BE1C0052C623 /* ObjectUserOwnerTableViewCell.swift */; };
 		9359A0952378636A00F8C028 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359A0942378636A00F8C028 /* UserController.swift */; };
+		93899946238D9CE0004874A3 /* CreateLendObjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93899945238D9CE0004874A3 /* CreateLendObjectTableViewController.swift */; };
 		938BD7BE23841835001C06B8 /* LendObjectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 938BD7BD23841835001C06B8 /* LendObjectView.xib */; };
 		938BD7C123841A9A001C06B8 /* LendObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BD7C023841A9A001C06B8 /* LendObjectView.swift */; };
 		93CD160D237B134300DFC5D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD160C237B134300DFC5D7 /* User.swift */; };
@@ -60,6 +61,7 @@
 		935858ED2386B8110052C623 /* ObjectDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetailTableViewController.swift; sourceTree = "<group>"; };
 		935858EF2386BE1C0052C623 /* ObjectUserOwnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectUserOwnerTableViewCell.swift; sourceTree = "<group>"; };
 		9359A0942378636A00F8C028 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		93899945238D9CE0004874A3 /* CreateLendObjectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLendObjectTableViewController.swift; sourceTree = "<group>"; };
 		938BD7BD23841835001C06B8 /* LendObjectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LendObjectView.xib; sourceTree = "<group>"; };
 		938BD7C023841A9A001C06B8 /* LendObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObjectView.swift; sourceTree = "<group>"; };
 		93CD160C237B134300DFC5D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				935858F42386C4C50052C623 /* Cells */,
 				9336E347237EE67D00C99251 /* LendObjectsTableViewController.swift */,
 				935858ED2386B8110052C623 /* ObjectDetailTableViewController.swift */,
+				93899945238D9CE0004874A3 /* CreateLendObjectTableViewController.swift */,
 			);
 			path = TableViewControllers;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				9336E346237ED77200C99251 /* LendObjectTableViewCell.swift in Sources */,
 				938BD7C123841A9A001C06B8 /* LendObjectView.swift in Sources */,
 				9336E348237EE67D00C99251 /* LendObjectsTableViewController.swift in Sources */,
+				93899946238D9CE0004874A3 /* CreateLendObjectTableViewController.swift in Sources */,
 				93FB2EDB238590F500FE220E /* DateFormatting.swift in Sources */,
 				9359A0952378636A00F8C028 /* UserController.swift in Sources */,
 				9336E34A2380461F00C99251 /* CustomNavigationController.swift in Sources */,

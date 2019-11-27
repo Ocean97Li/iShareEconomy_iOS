@@ -11,11 +11,13 @@ import RxSwift
 
 class LoginController {
     
+    static let shared = LoginController()
+    
     let loggedIn = BehaviorSubject<LoginObject?>(value: nil)
     let loginError = BehaviorSubject<String?>(value: nil)
     let authToken = BehaviorSubject<String?>(value: nil)
     
-    init() {
+    private init() {
         loggedIn.onNext(loadFromFile())
     }
     
