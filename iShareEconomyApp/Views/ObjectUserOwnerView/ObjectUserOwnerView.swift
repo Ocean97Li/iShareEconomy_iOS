@@ -13,12 +13,19 @@ class ObjectUserOwnerView: UIView {
     @IBOutlet weak var containerView: UIView!
     let kCONTENT_XIB_NAME = "ObjectUserOwnerView"
     
+    let cellCoordinator = CellCoordinator.shared
     
     @IBOutlet var userOwnerImage: UIImageView!
     
     @IBOutlet var nameLabel: UILabel!
     
     @IBOutlet var periodDatesLabel: UILabel!
+    
+    @IBAction func userDetail(_ sender: Any) {
+        if let id = objectUserOwner?.userId {
+            cellCoordinator.updateUserHeader(with: id)
+        }
+    }
     
     var objectUserOwner: ObjectOwner? = nil {
         didSet {

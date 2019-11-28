@@ -53,7 +53,7 @@ class UserController {
                         firstname:  userJSON["firstname"] as! String,
                         lastname: userJSON["lastname"] as! String,
                         address: userJSON["address"] as! String,
-                        distance: Int(truncating: userJSON["distance"] as! NSNumber),
+                        distance: Double(truncating: userJSON["distance"] as! NSNumber),
                         rating: Int(truncating: userJSON["rating"] as! NSNumber),
                         lending: lending,
                         using: using)
@@ -112,5 +112,18 @@ class UserController {
             // Delete Succesfull
         }
         task.resume()
+    }
+    
+    public func getLocalUser(by id: String) -> User? {
+        if id == _loggedInUser.id {
+            return _loggedInUser
+        }
+        for user in _users {
+            if user.id == id {
+                return user
+            }
+        }
+        print("FUUCK")
+        return nil
     }
 }

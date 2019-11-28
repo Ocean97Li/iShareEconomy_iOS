@@ -7,20 +7,31 @@
 //
 
 import UIKit
+import RxSwift
 
 class ObjectDetailTableViewController: UITableViewController {
     
+    let cellCoordinator = CellCoordinator.shared
+    let userController = UserController.shared
+    
+    let dispose = DisposeBag()
+    
     var object: LendObject? = nil
+    var userDetailId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "\(object!.name.capitalized) detail"
         self.tableView.reloadData()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        cellCoordinator.userHeader.subscribe({
+            if let id = $0.element {
+                self.userDetailId = id
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "UserDetailSegue", sender: nil)
+                }
+            }
+        }).disposed(by: dispose)
     }
 
     // MARK: - Table view data source
@@ -38,10 +49,10 @@ class ObjectDetailTableViewController: UITableViewController {
         case 3:
             text.text = "Waitinglist"
         default:
-            ".."
+            text.text = ""
         }
         text.font = UIFont.boldSystemFont(ofSize: 25.0)
-        text.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 0);
+        text.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 0);
         header.textLabel?.text = text.text
         return header
     }
@@ -99,14 +110,6 @@ class ObjectDetailTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.backgroundColor = UIColor.white
-        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 24)
-        header.textLabel?.frame = header.frame
-        header.textLabel?.textAlignment = .natural
-    }
-    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 45;
     }
@@ -143,14 +146,14 @@ class ObjectDetailTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "UserDetailSegue" {
+            if let viewController = segue.destination.children[0] as? UserDetailTableViewController,
+                  let user = self.userController.getLocalUser(by: userDetailId) {
+                      viewController.user = user
+                      viewController.isMe = true
+                  }
+        }
     }
-    */
 
 }
