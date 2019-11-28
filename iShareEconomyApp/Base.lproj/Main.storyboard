@@ -61,6 +61,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ytR-X4-efu">
+                        <barButtonItem key="leftBarButtonItem" image="minus" catalog="system" id="bKD-EK-yxC">
+                            <connections>
+                                <action selector="enableRemoving:" destination="vWi-iO-yoe" id="ZrQ-8R-kzN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="w2r-o7-QLa">
                             <connections>
                                 <segue destination="lKJ-jB-J3G" kind="presentation" id="PAu-uz-lpN"/>
@@ -68,6 +73,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="removeItemBarButton" destination="bKD-EK-yxC" id="ZUo-RN-1OH"/>
                         <segue destination="Aii-tx-Hgk" kind="show" id="rhp-Lu-fZj"/>
                     </connections>
                 </tableViewController>
@@ -195,7 +201,7 @@
         <!--Using-->
         <scene sceneID="E5D-Ut-KR6">
             <objects>
-                <navigationController id="TBJ-2V-5Gh" customClass="CustomNavigationController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Using" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TBJ-2V-5Gh" customClass="CustomNavigationController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Using" image="hand.point.left" catalog="system" id="eGn-yc-8Bj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jn2-S3-b4t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
@@ -361,7 +367,7 @@
         <!--Sharing-->
         <scene sceneID="1Sb-ww-JEQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ibb-zN-nCz" customClass="CustomNavigationController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Sharing" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ibb-zN-nCz" customClass="CustomNavigationController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Sharing" image="hammer" catalog="system" id="ZQX-nK-1P3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="QcP-lO-O4R">
@@ -607,6 +613,7 @@
         <image name="hammer" catalog="system" width="64" height="56"/>
         <image name="hammer.fill" catalog="system" width="64" height="56"/>
         <image name="hand.point.left" catalog="system" width="64" height="48"/>
+        <image name="minus" catalog="system" width="64" height="12"/>
         <image name="person.2.fill" catalog="system" width="64" height="40"/>
         <image name="person.circle.fill" catalog="system" width="64" height="60"/>
     </resources>

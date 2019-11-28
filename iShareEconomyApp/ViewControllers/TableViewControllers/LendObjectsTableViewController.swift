@@ -17,6 +17,19 @@ class LendObjectsTableViewController: UITableViewController {
     var titleText = ""
     var objects: [LendObject] = []
     
+    var removing: Bool = false
+    
+    @IBOutlet var removeItemBarButton: UIBarButtonItem!
+    
+    @IBAction func enableRemoving(_ sender: Any) {
+        removing.toggle()
+        if (removing) {
+            removeItemBarButton.tintColor = .lightGray
+        } else {
+            removeItemBarButton.tintColor = .systemBlue
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
@@ -70,33 +83,39 @@ class LendObjectsTableViewController: UITableViewController {
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        guard title == "Sharing" else {return false}
+        if objects[indexPath.row].currentUser != nil && !objects[indexPath.row].waitinglist.isEmpty {
+            return false
+        }
+        return removing
+        
     }
     
     func updateObjectItems(user: User) {
-        if self.tabBarController?.tabBar.selectedItem?.title == "Sharing" {
-            self.objects = user.lending
-            self.titleText = "Sharing"
-        } else {
-            self.objects = user.using
-            self.titleText = "Using"
-            self.navigationItem.rightBarButtonItems?.removeAll()
+        if let restorationID = self.navigationController?.restorationIdentifier {
+            if restorationID == "Sharing" {
+                self.objects = user.lending
+                self.titleText = "Sharing"
+            } else {
+                self.objects = user.using
+                self.titleText = "Using"
+                self.navigationItem.rightBarButtonItems?.removeAll()
+                self.navigationItem.leftBarButtonItems?.removeAll()
+            }
+            self.title = self.titleText
+            self.tableView.reloadData()
         }
-        self.title = self.titleText
-        self.tableView.reloadData()
     }
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+
+    override func tableView(_ tableView:UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+          if editingStyle == UITableViewCell.EditingStyle.delete {
+                userController.deleteObject(withId: objects[indexPath.row].id)
+                objects.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            
+        }
     }
-    */
 
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
