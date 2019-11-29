@@ -96,8 +96,6 @@ class LendObjectsTableViewController: UITableViewController {
             } else {
                 self.objects = user.using
                 self.titleText = "Using"
-                self.navigationItem.rightBarButtonItems?.removeAll()
-                self.navigationItem.leftBarButtonItems?.removeAll()
             }
             self.title = self.titleText
             self.tableView.reloadData()

@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--LendObjects-->
+        <!--SharingLendObjects-->
         <scene sceneID="9It-Io-vCx">
             <objects>
-                <tableViewController title="LendObjects" id="vWi-iO-yoe" customClass="LendObjectsTableViewController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="LendObjects" id="vWi-iO-yoe" userLabel="SharingLendObjects" customClass="LendObjectsTableViewController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" id="gp2-O5-1fY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,7 +79,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="098-iA-UN2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4501" y="-745"/>
+            <point key="canvasLocation" x="4503" y="-1092"/>
         </scene>
         <!--User Detail Table View Controller-->
         <scene sceneID="y7A-mK-knl">
@@ -168,7 +168,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Jb-KC-uej" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8246" y="-377"/>
+            <point key="canvasLocation" x="7972" y="-660"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uZg-Pb-xVd">
@@ -185,7 +185,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZKL-b8-r6w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5338" y="-377"/>
+            <point key="canvasLocation" x="5338" y="-658"/>
         </scene>
         <!--Object Detail Table View Controller-->
         <scene sceneID="SLH-pV-LTO">
@@ -288,7 +288,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCE-RG-KZe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6245" y="-377"/>
+            <point key="canvasLocation" x="6183" y="-659"/>
         </scene>
         <!--Using-->
         <scene sceneID="E5D-Ut-KR6">
@@ -300,12 +300,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="vWi-iO-yoe" kind="relationship" relationship="rootViewController" id="E7L-H3-MpY"/>
+                        <segue destination="hh1-wm-7uz" kind="relationship" relationship="rootViewController" id="G5Q-zv-VOg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ktu-yV-lBa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3661" y="-398"/>
+            <point key="canvasLocation" x="3661" y="-377"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -679,7 +679,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y6p-Wr-LFW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="18c-ra-mMv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6244.9275362318849" y="-1092.3913043478262"/>
+            <point key="canvasLocation" x="6184" y="-1382"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AYx-9D-bft">
@@ -697,7 +697,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ks-7x-q3P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5337.68115942029" y="-1092.3913043478262"/>
+            <point key="canvasLocation" x="5338" y="-1381"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="poX-cs-rB1">
@@ -715,7 +715,71 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rB-FX-Mdo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7196" y="-376"/>
+            <point key="canvasLocation" x="7064" y="-659"/>
+        </scene>
+        <!--UsingLendObjects-->
+        <scene sceneID="JNW-M3-8yJ">
+            <objects>
+                <tableViewController title="LendObjects" id="hh1-wm-7uz" userLabel="UsingLendObjects" customClass="LendObjectsTableViewController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" id="rX4-cI-tvb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LendObjectCell" id="rdy-4O-YkC" userLabel="LendObjectCell" customClass="LendObjectTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="80.333335876464844"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rdy-4O-YkC" id="NFa-TI-69V">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.333335876464844"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcB-kq-yho">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPx-mM-ocY" customClass="LendObjectView" customModule="iShareEconomyApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="FYO-X7-K3a"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="HPx-mM-ocY" firstAttribute="top" secondItem="wcB-kq-yho" secondAttribute="top" id="mmf-cv-btx"/>
+                                                <constraint firstAttribute="bottom" secondItem="HPx-mM-ocY" secondAttribute="bottom" id="os2-Fj-jQe"/>
+                                                <constraint firstItem="HPx-mM-ocY" firstAttribute="leading" secondItem="wcB-kq-yho" secondAttribute="leading" id="vgh-gQ-DII"/>
+                                                <constraint firstAttribute="trailing" secondItem="HPx-mM-ocY" secondAttribute="trailing" id="xY5-r6-dAN"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="wcB-kq-yho" secondAttribute="trailing" id="YdM-81-jgV"/>
+                                        <constraint firstItem="wcB-kq-yho" firstAttribute="top" secondItem="NFa-TI-69V" secondAttribute="top" id="bns-vd-dI3"/>
+                                        <constraint firstAttribute="bottom" secondItem="wcB-kq-yho" secondAttribute="bottom" id="cGh-tk-d6q"/>
+                                        <constraint firstItem="wcB-kq-yho" firstAttribute="leading" secondItem="NFa-TI-69V" secondAttribute="leading" id="huE-k4-kNb"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lendObjectView" destination="HPx-mM-ocY" id="SuL-Ba-nXA"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hh1-wm-7uz" id="fbq-Nr-nra"/>
+                            <outlet property="delegate" destination="hh1-wm-7uz" id="1qO-yQ-cws"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="jgL-Rl-Wva">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="PPI-Np-Hf5"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Aii-tx-Hgk" kind="show" id="tjF-gf-ejk"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iRy-jq-81u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4503" y="-377"/>
         </scene>
     </scenes>
     <resources>
@@ -729,6 +793,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4E1-eI-WU6"/>
-        <segue reference="E7L-H3-MpY"/>
+        <segue reference="tjF-gf-ejk"/>
     </inferredMetricsTieBreakers>
 </document>
