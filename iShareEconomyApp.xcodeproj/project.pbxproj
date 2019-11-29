@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9334EC18238FF71100C48BB4 /* UserDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334EC17238FF71100C48BB4 /* UserDetailTableViewController.swift */; };
+		9334EC1A2390110E00C48BB4 /* CellCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334EC192390110E00C48BB4 /* CellCoordinator.swift */; };
 		9336E346237ED77200C99251 /* LendObjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E345237ED77200C99251 /* LendObjectTableViewCell.swift */; };
 		9336E348237EE67D00C99251 /* LendObjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E347237EE67D00C99251 /* LendObjectsTableViewController.swift */; };
 		9336E34A2380461F00C99251 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E3492380461F00C99251 /* CustomNavigationController.swift */; };
@@ -30,6 +32,10 @@
 		93899946238D9CE0004874A3 /* CreateLendObjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93899945238D9CE0004874A3 /* CreateLendObjectTableViewController.swift */; };
 		938BD7BE23841835001C06B8 /* LendObjectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 938BD7BD23841835001C06B8 /* LendObjectView.xib */; };
 		938BD7C123841A9A001C06B8 /* LendObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BD7C023841A9A001C06B8 /* LendObjectView.swift */; };
+		93A8F7A9238FD39A00917DD6 /* UserHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A8F7A8238FD39A00917DD6 /* UserHeaderView.xib */; };
+		93A8F7AB238FD3AB00917DD6 /* UserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8F7AA238FD3AB00917DD6 /* UserHeaderView.swift */; };
+		93A8F7AD238FDC6D00917DD6 /* RoundingDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8F7AC238FDC6D00917DD6 /* RoundingDouble.swift */; };
+		93A8F7B1238FF03A00917DD6 /* UserHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8F7B0238FF03A00917DD6 /* UserHeaderTableViewCell.swift */; };
 		93CD160D237B134300DFC5D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD160C237B134300DFC5D7 /* User.swift */; };
 		93CD160F237B140C00DFC5D7 /* LendObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD160E237B140C00DFC5D7 /* LendObject.swift */; };
 		93CD1611237B147A00DFC5D7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD1610237B147A00DFC5D7 /* Request.swift */; };
@@ -40,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9334EC17238FF71100C48BB4 /* UserDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailTableViewController.swift; sourceTree = "<group>"; };
+		9334EC192390110E00C48BB4 /* CellCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCoordinator.swift; sourceTree = "<group>"; };
 		9336E345237ED77200C99251 /* LendObjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObjectTableViewCell.swift; sourceTree = "<group>"; };
 		9336E347237EE67D00C99251 /* LendObjectsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObjectsTableViewController.swift; sourceTree = "<group>"; };
 		9336E3492380461F00C99251 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -64,6 +72,10 @@
 		93899945238D9CE0004874A3 /* CreateLendObjectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLendObjectTableViewController.swift; sourceTree = "<group>"; };
 		938BD7BD23841835001C06B8 /* LendObjectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LendObjectView.xib; sourceTree = "<group>"; };
 		938BD7C023841A9A001C06B8 /* LendObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObjectView.swift; sourceTree = "<group>"; };
+		93A8F7A8238FD39A00917DD6 /* UserHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserHeaderView.xib; sourceTree = "<group>"; };
+		93A8F7AA238FD3AB00917DD6 /* UserHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeaderView.swift; sourceTree = "<group>"; };
+		93A8F7AC238FDC6D00917DD6 /* RoundingDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundingDouble.swift; sourceTree = "<group>"; };
+		93A8F7B0238FF03A00917DD6 /* UserHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		93CD160C237B134300DFC5D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		93CD160E237B140C00DFC5D7 /* LendObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObject.swift; sourceTree = "<group>"; };
 		93CD1610237B147A00DFC5D7 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -144,6 +156,7 @@
 				9336E347237EE67D00C99251 /* LendObjectsTableViewController.swift */,
 				935858ED2386B8110052C623 /* ObjectDetailTableViewController.swift */,
 				93899945238D9CE0004874A3 /* CreateLendObjectTableViewController.swift */,
+				9334EC17238FF71100C48BB4 /* UserDetailTableViewController.swift */,
 			);
 			path = TableViewControllers;
 			sourceTree = "<group>";
@@ -163,6 +176,8 @@
 			children = (
 				935858EF2386BE1C0052C623 /* ObjectUserOwnerTableViewCell.swift */,
 				9336E345237ED77200C99251 /* LendObjectTableViewCell.swift */,
+				93A8F7B0238FF03A00917DD6 /* UserHeaderTableViewCell.swift */,
+				9334EC192390110E00C48BB4 /* CellCoordinator.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -178,10 +193,20 @@
 		938BD7BF23841A62001C06B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				93A8F7A7238FD32400917DD6 /* UserHeaderview */,
 				935858E823869E070052C623 /* ObjectUserOwnerView */,
 				935858E723869DF90052C623 /* LendObjectView */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		93A8F7A7238FD32400917DD6 /* UserHeaderview */ = {
+			isa = PBXGroup;
+			children = (
+				93A8F7A8238FD39A00917DD6 /* UserHeaderView.xib */,
+				93A8F7AA238FD3AB00917DD6 /* UserHeaderView.swift */,
+			);
+			path = UserHeaderview;
 			sourceTree = "<group>";
 		};
 		93CD1614237C7C6A00DFC5D7 /* Models */ = {
@@ -222,6 +247,7 @@
 			children = (
 				9336EBD223780ED200AB51C0 /* URL+Helpers.swift */,
 				93FB2EDA238590F500FE220E /* DateFormatting.swift */,
+				93A8F7AC238FDC6D00917DD6 /* RoundingDouble.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -290,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A8F7A9238FD39A00917DD6 /* UserHeaderView.xib in Resources */,
 				938BD7BE23841835001C06B8 /* LendObjectView.xib in Resources */,
 				9336EBC823780D7200AB51C0 /* LaunchScreen.storyboard in Resources */,
 				935858EC2386A1D00052C623 /* ObjectUserOwnerView.xib in Resources */,
@@ -309,8 +336,11 @@
 				93CD160D237B134300DFC5D7 /* User.swift in Sources */,
 				9336EBD623780ED200AB51C0 /* LoginObject.swift in Sources */,
 				93CD1613237C7C2E00DFC5D7 /* ObjectUserOwner.swift in Sources */,
+				93A8F7AB238FD3AB00917DD6 /* UserHeaderView.swift in Sources */,
+				9334EC1A2390110E00C48BB4 /* CellCoordinator.swift in Sources */,
 				935858EA23869E7F0052C623 /* ObjectUserOwnerView.swift in Sources */,
 				9336EBD823780ED200AB51C0 /* CustomTabBarController.swift in Sources */,
+				9334EC18238FF71100C48BB4 /* UserDetailTableViewController.swift in Sources */,
 				9336E346237ED77200C99251 /* LendObjectTableViewCell.swift in Sources */,
 				938BD7C123841A9A001C06B8 /* LendObjectView.swift in Sources */,
 				9336E348237EE67D00C99251 /* LendObjectsTableViewController.swift in Sources */,
@@ -319,6 +349,7 @@
 				9359A0952378636A00F8C028 /* UserController.swift in Sources */,
 				9336E34A2380461F00C99251 /* CustomNavigationController.swift in Sources */,
 				9336EBBA23780D7200AB51C0 /* AppDelegate.swift in Sources */,
+				93A8F7B1238FF03A00917DD6 /* UserHeaderTableViewCell.swift in Sources */,
 				9336EBD923780ED200AB51C0 /* URL+Helpers.swift in Sources */,
 				93CD160F237B140C00DFC5D7 /* LendObject.swift in Sources */,
 				93CD161B237C838B00DFC5D7 /* LendObjectController.swift in Sources */,
@@ -328,6 +359,7 @@
 				9336EBDB23780ED200AB51C0 /* LoginViewController.swift in Sources */,
 				935858F02386BE1C0052C623 /* ObjectUserOwnerTableViewCell.swift in Sources */,
 				935858EE2386B8110052C623 /* ObjectDetailTableViewController.swift in Sources */,
+				93A8F7AD238FDC6D00917DD6 /* RoundingDouble.swift in Sources */,
 				9336EBBC23780D7200AB51C0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

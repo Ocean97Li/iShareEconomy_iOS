@@ -17,8 +17,4 @@ struct LendObject {
     let description: String
     let type: LendObjectType
     let rules: String
-    
-//    init(id: id, owner: ObjectOwner, waitinglist: [ObjectOwner], name: String, description: String, type: LendObjectType, rules: String) {
-//        self.id = id
-//    }
 }

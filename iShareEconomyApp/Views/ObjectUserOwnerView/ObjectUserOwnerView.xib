@@ -57,6 +57,9 @@
                                         <constraint firstAttribute="width" constant="50" id="mX4-wz-YGc"/>
                                     </constraints>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <connections>
+                                        <action selector="userDetail:" destination="-1" eventType="touchUpInside" id="eET-yY-L3d"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>

@@ -38,7 +38,6 @@ class LoginViewController: KUIViewController {
         super.viewDidLoad()
         logInButton.isEnabled = false
         logInButton.backgroundColor = .gray
-        // Do any additional setup after loading the view.
         
         loginController.loggedIn.subscribe({
             if let login = $0.element! {

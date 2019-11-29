@@ -74,12 +74,101 @@
                     </navigationItem>
                     <connections>
                         <outlet property="removeItemBarButton" destination="bKD-EK-yxC" id="ZUo-RN-1OH"/>
-                        <segue destination="Aii-tx-Hgk" kind="show" id="rhp-Lu-fZj"/>
+                        <segue destination="Aii-tx-Hgk" kind="show" identifier="" id="rhp-Lu-fZj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="098-iA-UN2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4501" y="-745"/>
+        </scene>
+        <!--User Detail Table View Controller-->
+        <scene sceneID="y7A-mK-knl">
+            <objects>
+                <tableViewController storyboardIdentifier="UserDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RSc-pg-NTu" customClass="UserDetailTableViewController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TsX-yz-AKK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserHeaderCell" id="3Rx-XG-5a5" customClass="UserHeaderTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="186.33332824707031"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Rx-XG-5a5" id="eC8-rb-IZa">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="186.33332824707031"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JiF-jH-urE" customClass="UserHeaderView" customModule="iShareEconomyApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="186.33333333333334"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="186" id="yzl-Ih-otd"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JiF-jH-urE" firstAttribute="leading" secondItem="eC8-rb-IZa" secondAttribute="leading" id="NJz-Uh-Lb1"/>
+                                        <constraint firstAttribute="trailing" secondItem="JiF-jH-urE" secondAttribute="trailing" id="XLS-ed-mdp"/>
+                                        <constraint firstAttribute="bottom" secondItem="JiF-jH-urE" secondAttribute="bottom" id="Zal-Hb-Nhn"/>
+                                        <constraint firstItem="JiF-jH-urE" firstAttribute="top" secondItem="eC8-rb-IZa" secondAttribute="top" id="zBL-Yx-7bz"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="UserHeaderCell"/>
+                                <connections>
+                                    <outlet property="userHeaderView" destination="JiF-jH-urE" id="MVK-vr-pu0"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LendObjectCell" id="99N-9h-iL7" userLabel="LendObjectCell" customClass="LendObjectTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="214.33332824707031" width="414" height="80.333335876464844"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="99N-9h-iL7" id="1mV-lr-A4V">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.333335876464844"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ok-qu-5gW">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oA6-ey-vdl" customClass="LendObjectView" customModule="iShareEconomyApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="3wg-u9-Fwa"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="oA6-ey-vdl" secondAttribute="bottom" id="ETO-9h-DSB"/>
+                                                <constraint firstItem="oA6-ey-vdl" firstAttribute="leading" secondItem="2Ok-qu-5gW" secondAttribute="leading" id="U2F-LT-1aN"/>
+                                                <constraint firstAttribute="trailing" secondItem="oA6-ey-vdl" secondAttribute="trailing" id="cR3-cX-HJc"/>
+                                                <constraint firstItem="oA6-ey-vdl" firstAttribute="top" secondItem="2Ok-qu-5gW" secondAttribute="top" id="hAP-sC-3zh"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="2Ok-qu-5gW" secondAttribute="bottom" id="Fyr-FR-VOS"/>
+                                        <constraint firstItem="2Ok-qu-5gW" firstAttribute="leading" secondItem="1mV-lr-A4V" secondAttribute="leading" id="Mh3-3Z-hpQ"/>
+                                        <constraint firstItem="2Ok-qu-5gW" firstAttribute="top" secondItem="1mV-lr-A4V" secondAttribute="top" id="P7d-jR-43x"/>
+                                        <constraint firstAttribute="trailing" secondItem="2Ok-qu-5gW" secondAttribute="trailing" id="Rgw-DK-HtF"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lendObjectView" destination="oA6-ey-vdl" id="Yj0-kQ-Wsf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RSc-pg-NTu" id="7JH-kl-oEX"/>
+                            <outlet property="delegate" destination="RSc-pg-NTu" id="y22-hq-XEm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="QVr-Jc-7gu"/>
+                    <connections>
+                        <segue destination="Vuf-4b-ERD" kind="show" identifier="UserDetailToObjectDetailSegue" id="4E1-eI-WU6"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Jb-KC-uej" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8246" y="-377"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uZg-Pb-xVd">
@@ -96,14 +185,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZKL-b8-r6w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5338" y="-399"/>
+            <point key="canvasLocation" x="5338" y="-377"/>
         </scene>
         <!--Object Detail Table View Controller-->
         <scene sceneID="SLH-pV-LTO">
             <objects>
                 <tableViewController storyboardIdentifier="ObjectDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vuf-4b-ERD" customClass="ObjectDetailTableViewController" customModule="iShareEconomyApp" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="buW-jx-eph">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -193,10 +282,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="OmK-GZ-DdS"/>
+                    <connections>
+                        <segue destination="Iml-5N-sz2" kind="showDetail" identifier="UserDetailSegue" destinationCreationSelector="UserDetailSegue" id="3sz-zi-rtV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCE-RG-KZe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6245" y="-399"/>
+            <point key="canvasLocation" x="6245" y="-377"/>
         </scene>
         <!--Using-->
         <scene sceneID="E5D-Ut-KR6">
@@ -607,6 +699,24 @@
             </objects>
             <point key="canvasLocation" x="5337.68115942029" y="-1092.3913043478262"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="poX-cs-rB1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Iml-5N-sz2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GWe-ec-XoY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RSc-pg-NTu" kind="relationship" relationship="rootViewController" id="SYg-pk-fBT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8rB-FX-Mdo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7196" y="-376"/>
+        </scene>
     </scenes>
     <resources>
         <image name="car.fill" catalog="system" width="64" height="46"/>
@@ -618,6 +728,7 @@
         <image name="person.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9RL-cp-jLy"/>
+        <segue reference="4E1-eI-WU6"/>
+        <segue reference="E7L-H3-MpY"/>
     </inferredMetricsTieBreakers>
 </document>

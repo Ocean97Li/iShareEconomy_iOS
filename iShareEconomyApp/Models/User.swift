@@ -13,7 +13,7 @@ struct User {
     let firstname: String
     let lastname: String
     let address: String
-    let distance: Int
+    let distance: Double
     let rating: Int
     var lending: [LendObject]
     var using: [LendObject]
