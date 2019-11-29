@@ -20,7 +20,7 @@ class ObjectUserOwnerTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func update(_ objectUserOwner: ObjectOwner) {
-        objectUserOwnerView.objectUserOwner = objectUserOwner
+    func update(id: String, name: String, subtitle: String?, owner: Bool) {
+        objectUserOwnerView.update(id: id, name: name, subtitle: subtitle, owner: owner)
     }
 }

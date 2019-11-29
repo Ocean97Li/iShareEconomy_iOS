@@ -11,7 +11,7 @@
             <connections>
                 <outlet property="containerView" destination="iN0-l3-epB" id="ZOd-Bk-ZiX"/>
                 <outlet property="nameLabel" destination="3Xk-ZH-aCg" id="oLO-Yx-JYn"/>
-                <outlet property="periodDatesLabel" destination="EYZ-Yh-wNF" id="GnK-g9-l2g"/>
+                <outlet property="subtitleLabel" destination="EYZ-Yh-wNF" id="zFE-pV-m3F"/>
                 <outlet property="userOwnerImage" destination="mFV-FG-mpw" id="p53-RG-wwb"/>
             </connections>
         </placeholder>

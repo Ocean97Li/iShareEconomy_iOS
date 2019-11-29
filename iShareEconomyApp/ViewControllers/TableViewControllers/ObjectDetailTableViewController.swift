@@ -82,26 +82,34 @@ class ObjectDetailTableViewController: UITableViewController {
             cell.update(self.object!)
             return cell
         } else if indexPath.section == 1 { //owner
+            let owner = self.object!.owner
             let cell: ObjectUserOwnerTableViewCell
             cell = tableView.dequeueReusableCell(withIdentifier: "ObjectUserOwnerCell", for: indexPath) as! ObjectUserOwnerTableViewCell
             cell.selectionStyle = .none
-            cell.update(object!.owner)
+            cell.update(id: owner.userId, name: owner.userName, subtitle: nil, owner: true)
             return cell
         } else if indexPath.section == 2 { //current user
             let cell: ObjectUserOwnerTableViewCell
             cell = tableView.dequeueReusableCell(withIdentifier: "ObjectUserOwnerCell", for: indexPath) as! ObjectUserOwnerTableViewCell
             cell.selectionStyle = .none
-            if let currentUser = object?.currentUser {
-                cell.update(currentUser)
+            if let user = object?.currentUser {
+                let subtitle = objectUserFromToString(user)
+                cell.update(id: user.userId, name: user.userName, subtitle: subtitle, owner: false)
             }
             return cell
         } else { // waitinglist
             let cell: ObjectUserOwnerTableViewCell
             cell = tableView.dequeueReusableCell(withIdentifier: "ObjectUserOwnerCell", for: indexPath) as! ObjectUserOwnerTableViewCell
             cell.selectionStyle = .none
-            cell.update(object!.owner)
+            let waitingUser = object!.waitinglist[indexPath.row]
+            let subtitle = objectUserFromToString(waitingUser)
+            cell.update(id: waitingUser.userId, name: waitingUser.userName, subtitle: subtitle, owner: false)
             return cell
         }
+    }
+    
+    private func objectUserFromToString(_ user: ObjectUser) -> String {
+        return "From \(user.fromDate.toShortString()) to \(user.toDate.toShortString())"
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
