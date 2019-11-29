@@ -17,6 +17,5 @@ class CustomNavigationController: UINavigationController {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         self.isToolbarHidden = true    
-        // Do any additional setup after loading the view.
     }
 }

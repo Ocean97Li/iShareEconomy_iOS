@@ -14,6 +14,5 @@ class CustomTabBarController: UITabBarController {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         self.tabBarController?.navigationController?.navigationBar.isHidden = true
-        // Do any additional setup after loading the view.
     }
 }
