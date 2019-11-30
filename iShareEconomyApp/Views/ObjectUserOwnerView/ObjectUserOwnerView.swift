@@ -50,7 +50,7 @@ class ObjectUserOwnerView: UIView {
         if info {
             self.userDetailButton.setImage(UIImage(systemName: "info.circle"), for: .normal)
         } else {
-             self.userDetailButton.setImage(UIImage(systemName: "chevron.right"), for: .normal)
+            self.userDetailButton.setImage(UIImage(systemName: "chevron.right"), for: .normal)
         }
     }
     

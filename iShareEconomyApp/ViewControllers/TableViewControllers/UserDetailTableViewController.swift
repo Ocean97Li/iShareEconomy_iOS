@@ -124,11 +124,7 @@ class UserDetailTableViewController: UITableViewController, UIAdaptivePresentati
             } else {
                 self.selectedObject = user.using[indexPath.row]
             }
-            if self.fromOverview {
-                 performSegue(withIdentifier: "UserDetailFromOverviewToObjectDetailSegue", sender: nil)
-            } else {
-                 performSegue(withIdentifier: "UserDetailToObjectDetailSegue", sender: nil)
-            }
+            performSegue(withIdentifier: "UserDetailToObjectDetailSegue", sender: nil)
        }
     }
     
@@ -142,11 +138,13 @@ class UserDetailTableViewController: UITableViewController, UIAdaptivePresentati
             if let viewController = segue.destination as? ObjectDetailTableViewController,
                 let object = selectedObject {
                 viewController.object = object
+                viewController.fromOverview = fromOverview
             }
         } else if segue.identifier == "UserDetailFromOverviewToObjectDetailSegue" {
             if let viewController = segue.destination as? ObjectDetailTableViewController,
                 let object = selectedObject {
                 viewController.object = object
+                viewController.fromOverview = fromOverview
             }
         }
     }

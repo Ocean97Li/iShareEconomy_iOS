@@ -86,7 +86,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="UserDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RSc-pg-NTu" customClass="UserDetailTableViewController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TsX-yz-AKK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -283,7 +283,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="OmK-GZ-DdS"/>
                     <connections>
-                        <segue destination="Iml-5N-sz2" kind="presentation" identifier="UserDetailModalSegue" id="3sz-zi-rtV"/>
+                        <segue destination="Iml-5N-sz2" kind="presentation" identifier="UserDetailModalSegue" modalPresentationStyle="automatic" id="3sz-zi-rtV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCE-RG-KZe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -841,101 +841,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Users Who're Sharing" id="0Vr-L4-0mh"/>
                     <connections>
-                        <segue destination="squ-CF-1h1" kind="show" identifier="OverviewToUserDetailSegue" id="jLj-7S-txe"/>
+                        <segue destination="RSc-pg-NTu" kind="show" identifier="OverviewToUserDetailSegue" id="ewf-WI-aEZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DcP-JE-1QQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5338" y="64"/>
-        </scene>
-        <!--User Detail From Overview Table View Controller-->
-        <scene sceneID="zt4-4r-tIh">
-            <objects>
-                <tableViewController storyboardIdentifier="UserDetailFromOverview" useStoryboardIdentifierAsRestorationIdentifier="YES" id="squ-CF-1h1" userLabel="User Detail From Overview Table View Controller" customClass="UserDetailTableViewController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Poi-QN-nkv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserHeaderCell" id="dhM-eP-A50" customClass="UserHeaderTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="200.33332824707031"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dhM-eP-A50" id="ejv-em-fK3">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200.33332824707031"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pU3-0t-Dmj" customClass="UserHeaderView" customModule="iShareEconomyApp" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200.33333333333334"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="200" id="Bwz-IE-pne"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="pU3-0t-Dmj" secondAttribute="trailing" id="3oF-gw-QnT"/>
-                                        <constraint firstItem="pU3-0t-Dmj" firstAttribute="leading" secondItem="ejv-em-fK3" secondAttribute="leading" id="4AG-4D-xdO"/>
-                                        <constraint firstAttribute="bottom" secondItem="pU3-0t-Dmj" secondAttribute="bottom" id="OVL-Ug-Q4I"/>
-                                        <constraint firstItem="pU3-0t-Dmj" firstAttribute="top" secondItem="ejv-em-fK3" secondAttribute="top" id="guv-C8-SUp"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <accessibility key="accessibilityConfiguration" identifier="UserHeaderCell"/>
-                                <connections>
-                                    <outlet property="userHeaderView" destination="pU3-0t-Dmj" id="ppq-tp-bJy"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LendObjectCell" id="K7A-HG-1Jx" userLabel="LendObjectCell" customClass="LendObjectTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="228.33332824707031" width="414" height="80.333335876464844"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K7A-HG-1Jx" id="iBH-GB-lyp">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.333335876464844"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wue-WE-yIV">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRn-D8-jTY" customClass="LendObjectView" customModule="iShareEconomyApp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="80" id="qRO-YV-vlt"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            <constraints>
-                                                <constraint firstItem="xRn-D8-jTY" firstAttribute="leading" secondItem="Wue-WE-yIV" secondAttribute="leading" id="J9I-fA-uIj"/>
-                                                <constraint firstAttribute="trailing" secondItem="xRn-D8-jTY" secondAttribute="trailing" id="Qcb-JJ-zF9"/>
-                                                <constraint firstAttribute="bottom" secondItem="xRn-D8-jTY" secondAttribute="bottom" id="S1z-5P-xJ1"/>
-                                                <constraint firstItem="xRn-D8-jTY" firstAttribute="top" secondItem="Wue-WE-yIV" secondAttribute="top" id="kKj-hK-tLq"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Wue-WE-yIV" firstAttribute="leading" secondItem="iBH-GB-lyp" secondAttribute="leading" id="1ZQ-Qm-Bgg"/>
-                                        <constraint firstAttribute="trailing" secondItem="Wue-WE-yIV" secondAttribute="trailing" id="csY-qr-0nb"/>
-                                        <constraint firstItem="Wue-WE-yIV" firstAttribute="top" secondItem="iBH-GB-lyp" secondAttribute="top" id="u9G-HS-pVb"/>
-                                        <constraint firstAttribute="bottom" secondItem="Wue-WE-yIV" secondAttribute="bottom" id="y0I-4r-iJj"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="lendObjectView" destination="xRn-D8-jTY" id="zQk-DV-bv3"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="squ-CF-1h1" id="DOg-z3-FKf"/>
-                            <outlet property="delegate" destination="squ-CF-1h1" id="pkp-dF-uBx"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="3pj-fc-5Pb"/>
-                    <connections>
-                        <segue destination="Vuf-4b-ERD" kind="show" identifier="UserDetailFromOverviewToObjectDetailSegue" id="l9w-pf-eEz"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9FF-yo-JZv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6183" y="64"/>
         </scene>
     </scenes>
     <resources>
@@ -948,7 +859,8 @@
         <image name="person.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="l9w-pf-eEz"/>
+        <segue reference="GM8-JW-hCJ"/>
         <segue reference="tjF-gf-ejk"/>
+        <segue reference="ewf-WI-aEZ"/>
     </inferredMetricsTieBreakers>
 </document>

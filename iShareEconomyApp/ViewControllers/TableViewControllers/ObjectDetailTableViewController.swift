@@ -15,6 +15,7 @@ class ObjectDetailTableViewController: UITableViewController {
     let userController = UserController.shared
     
     let dispose = DisposeBag()
+    var subscription: Disposable? = nil
     
     var fromOverview: Bool = false
     
@@ -25,15 +26,24 @@ class ObjectDetailTableViewController: UITableViewController {
         super.viewDidLoad()
         title = "\(object!.name.capitalized) detail"
         self.tableView.reloadData()
-        
-        cellCoordinator.userHeader.subscribe({
-            if let id = $0.element {
-                self.userDetailId = id
-                DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "UserDetailModalSegue", sender: nil)
-                }
-            }
-        }).disposed(by: dispose)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.subscription = cellCoordinator.userHeader.subscribe({
+                   if let id = $0.element {
+                       self.userDetailId = id
+                       DispatchQueue.main.async {
+                           self.performSegue(withIdentifier: "UserDetailModalSegue", sender: nil)
+                       }
+                   }
+        })
+        self.subscription?.disposed(by: dispose)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.subscription?.dispose()
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

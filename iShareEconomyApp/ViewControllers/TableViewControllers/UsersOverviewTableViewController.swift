@@ -13,7 +13,9 @@ class UsersOverviewTableViewController: UITableViewController {
 
     let cellCoordinator = CellCoordinator.shared
     let userController = UserController.shared
+    
     let dispose = DisposeBag()
+    var subscription: Disposable? = nil
     
     var users: [User] = []
     
@@ -21,20 +23,25 @@ class UsersOverviewTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cellCoordinator.userHeader.subscribe({
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.cellCoordinator.usersViewedStack = []
+        self.subscription = cellCoordinator.userHeader.subscribe({
             if let id = $0.element {
                 self.userDetailId = id
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "OverviewToUserDetailSegue", sender: nil)
                 }
             }
-        }).disposed(by: dispose)
-
+        })
+        self.subscription?.disposed(by: dispose)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.cellCoordinator.usersViewedStack = []
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.subscription?.dispose()
     }
 
     // MARK: - Table view data source
@@ -95,8 +102,8 @@ class UsersOverviewTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "OverviewToUserDetailSegue" {
             if let viewController = segue.destination as? UserDetailTableViewController {
-                viewController.user = userController.getLocalUser(by:userDetailId)
                 viewController.fromOverview = true
+                viewController.user = userController.getLocalUser(by:userDetailId)
             }
             
         }
