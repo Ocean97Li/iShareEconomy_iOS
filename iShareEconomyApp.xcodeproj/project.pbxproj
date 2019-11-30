@@ -37,6 +37,7 @@
 		93A8F7AD238FDC6D00917DD6 /* RoundingDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8F7AC238FDC6D00917DD6 /* RoundingDouble.swift */; };
 		93A8F7B1238FF03A00917DD6 /* UserHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8F7B0238FF03A00917DD6 /* UserHeaderTableViewCell.swift */; };
 		93C12FF9239173CB007EBD4A /* UsersOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C12FF8239173CB007EBD4A /* UsersOverviewTableViewController.swift */; };
+		93C12FFB2392C1F6007EBD4A /* RequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C12FFA2392C1F6007EBD4A /* RequestController.swift */; };
 		93CD160D237B134300DFC5D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD160C237B134300DFC5D7 /* User.swift */; };
 		93CD160F237B140C00DFC5D7 /* LendObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD160E237B140C00DFC5D7 /* LendObject.swift */; };
 		93CD1611237B147A00DFC5D7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD1610237B147A00DFC5D7 /* Request.swift */; };
@@ -78,6 +79,7 @@
 		93A8F7AC238FDC6D00917DD6 /* RoundingDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundingDouble.swift; sourceTree = "<group>"; };
 		93A8F7B0238FF03A00917DD6 /* UserHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		93C12FF8239173CB007EBD4A /* UsersOverviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersOverviewTableViewController.swift; sourceTree = "<group>"; };
+		93C12FFA2392C1F6007EBD4A /* RequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestController.swift; sourceTree = "<group>"; };
 		93CD160C237B134300DFC5D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		93CD160E237B140C00DFC5D7 /* LendObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendObject.swift; sourceTree = "<group>"; };
 		93CD1610237B147A00DFC5D7 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				9336EBD523780ED200AB51C0 /* LoginController.swift */,
 				9359A0942378636A00F8C028 /* UserController.swift */,
 				93CD161A237C838B00DFC5D7 /* LendObjectController.swift */,
+				93C12FFA2392C1F6007EBD4A /* RequestController.swift */,
 			);
 			path = DomainControllers;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				9336E348237EE67D00C99251 /* LendObjectsTableViewController.swift in Sources */,
 				93899946238D9CE0004874A3 /* CreateLendObjectTableViewController.swift in Sources */,
 				93C12FF9239173CB007EBD4A /* UsersOverviewTableViewController.swift in Sources */,
+				93C12FFB2392C1F6007EBD4A /* RequestController.swift in Sources */,
 				93FB2EDB238590F500FE220E /* DateFormatting.swift in Sources */,
 				9359A0952378636A00F8C028 /* UserController.swift in Sources */,
 				9336E34A2380461F00C99251 /* CustomNavigationController.swift in Sources */,
