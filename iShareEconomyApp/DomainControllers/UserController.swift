@@ -123,7 +123,7 @@ class UserController {
                 return user
             }
         }
-        print("FUUCK")
+        
         return nil
     }
 }
