@@ -15,6 +15,9 @@ class ObjectDetailTableViewController: UITableViewController {
     let userController = UserController.shared
     
     let dispose = DisposeBag()
+    var subscription: Disposable? = nil
+    
+    var fromOverview: Bool = false
     
     var object: LendObject? = nil
     var userDetailId = ""
@@ -23,15 +26,24 @@ class ObjectDetailTableViewController: UITableViewController {
         super.viewDidLoad()
         title = "\(object!.name.capitalized) detail"
         self.tableView.reloadData()
-        
-        cellCoordinator.userHeader.subscribe({
-            if let id = $0.element {
-                self.userDetailId = id
-                DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "UserDetailSegue", sender: nil)
-                }
-            }
-        }).disposed(by: dispose)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.subscription = cellCoordinator.userHeader.subscribe({
+                   if let id = $0.element {
+                       self.userDetailId = id
+                       DispatchQueue.main.async {
+                           self.performSegue(withIdentifier: "UserDetailModalSegue", sender: nil)
+                       }
+                   }
+        })
+        self.subscription?.disposed(by: dispose)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.subscription?.dispose()
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -82,26 +94,34 @@ class ObjectDetailTableViewController: UITableViewController {
             cell.update(self.object!)
             return cell
         } else if indexPath.section == 1 { //owner
+            let owner = self.object!.owner
             let cell: ObjectUserOwnerTableViewCell
             cell = tableView.dequeueReusableCell(withIdentifier: "ObjectUserOwnerCell", for: indexPath) as! ObjectUserOwnerTableViewCell
             cell.selectionStyle = .none
-            cell.update(object!.owner)
+            cell.update(id: owner.userId, name: owner.userName, subtitle: nil, owner: true, info: true)
             return cell
         } else if indexPath.section == 2 { //current user
             let cell: ObjectUserOwnerTableViewCell
             cell = tableView.dequeueReusableCell(withIdentifier: "ObjectUserOwnerCell", for: indexPath) as! ObjectUserOwnerTableViewCell
             cell.selectionStyle = .none
-            if let currentUser = object?.currentUser {
-                cell.update(currentUser)
+            if let user = object?.currentUser {
+                let subtitle = objectUserFromToString(user)
+                cell.update(id: user.userId, name: user.userName, subtitle: subtitle, owner: false, info: true)
             }
             return cell
         } else { // waitinglist
             let cell: ObjectUserOwnerTableViewCell
             cell = tableView.dequeueReusableCell(withIdentifier: "ObjectUserOwnerCell", for: indexPath) as! ObjectUserOwnerTableViewCell
             cell.selectionStyle = .none
-            cell.update(object!.owner)
+            let waitingUser = object!.waitinglist[indexPath.row]
+            let subtitle = objectUserFromToString(waitingUser)
+            cell.update(id: waitingUser.userId, name: waitingUser.userName, subtitle: subtitle, owner: false, info: true)
             return cell
         }
+    }
+    
+    private func objectUserFromToString(_ user: ObjectUser) -> String {
+        return "From \(user.fromDate.toShortString()) to \(user.toDate.toShortString())"
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -120,11 +140,13 @@ class ObjectDetailTableViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "UserDetailSegue" {
+        if segue.identifier == "UserDetailModalSegue" {
             if let viewController = segue.destination.children[0] as? UserDetailTableViewController,
                   let user = self.userController.getLocalUser(by: userDetailId) {
                       viewController.user = user
                       viewController.isMe = true
+                viewController.fromOverview = self.fromOverview
+                      segue.destination.presentationController?.delegate = viewController
                   }
         }
     }

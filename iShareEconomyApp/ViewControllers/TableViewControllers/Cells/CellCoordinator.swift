@@ -13,10 +13,16 @@ class CellCoordinator {
     
     static let shared = CellCoordinator()
     
+    var usersViewedStack: [String] = []
+    
     let userHeader = PublishSubject<String>()
     
     func updateUserHeader(with userId: String) {
-        userHeader.onNext(userId)
+        if !usersViewedStack.contains(userId) {
+            usersViewedStack.append(userId)
+            userHeader.onNext(userId)
+        }
+       
     }
     
     private init() {

@@ -23,7 +23,7 @@ class UserHeaderView: UIView {
         if let distance = distance {
             distanceLabel.text = "\(distance.rounded(toPlaces: 2)) km"
         } else {
-            distanceLabel.isHidden = true
+            distanceLabel.text = ""
         }
         var ratingString = ""
         for index in 1...rating {

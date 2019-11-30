@@ -19,30 +19,38 @@ class ObjectUserOwnerView: UIView {
     
     @IBOutlet var nameLabel: UILabel!
     
-    @IBOutlet var periodDatesLabel: UILabel!
+    @IBOutlet var subtitleLabel: UILabel!
+    
+    @IBOutlet var userDetailButton: UIButton!
     
     @IBAction func userDetail(_ sender: Any) {
-        if let id = objectUserOwner?.userId {
+        if let id = self.userId {
             cellCoordinator.updateUserHeader(with: id)
         }
     }
     
-    var objectUserOwner: ObjectOwner? = nil {
-        didSet {
-            self.update()
-        }
-    }
+    var userId: String? = nil
     
-    private func update() {
-        guard let userOwner = self.objectUserOwner else {
-            return
-        }
-        nameLabel.text = userOwner.userName
-        if let user = userOwner as? ObjectUser {
-            periodDatesLabel.text = "From \(user.fromDate.toShortString()) to \(user.toDate.toShortString())"
-            periodDatesLabel.isHidden = false
+    func update(id: String, name: String, subtitle: String?, owner: Bool = false, info: Bool = false) {
+        self.userId = id
+        self.nameLabel.text = name
+        self.userDetailButton.isHidden = false
+        
+        if let subtitle = subtitle {
+            self.subtitleLabel.text = subtitle
+            self.subtitleLabel.isHidden = false
         } else {
-            userOwnerImage.image = UIImage(systemName: "person.circle")
+            self.subtitleLabel.isHidden = true
+        }
+        
+        if owner {
+            self.userOwnerImage.image = UIImage(systemName: "person.circle")
+        }
+        
+        if info {
+            self.userDetailButton.setImage(UIImage(systemName: "info.circle"), for: .normal)
+        } else {
+            self.userDetailButton.setImage(UIImage(systemName: "chevron.right"), for: .normal)
         }
     }
     
@@ -59,6 +67,7 @@ class ObjectUserOwnerView: UIView {
     func commonInit() {
         Bundle.main.loadNibNamed(kCONTENT_XIB_NAME, owner: self, options: nil)
         containerView.fixInView(self)
-        periodDatesLabel.isHidden = true
+        subtitleLabel.isHidden = true
+        userDetailButton.isHidden = true
     }
 }
