@@ -17,6 +17,7 @@ class LendObjectsTableViewController: UITableViewController {
     
     var titleText = ""
     var objects: [LendObject] = []
+    var users: [User] = []
     
     var removing: Bool = false
     
@@ -42,6 +43,12 @@ class LendObjectsTableViewController: UITableViewController {
                 DispatchQueue.main.async {
                     self.updateObjectItems(user: loggedInUser)
                 }
+            }
+        }).disposed(by: dispose)
+        
+        userController.users.subscribe({
+            if let users = $0.element as? [User] {
+                self.users = users
             }
         }).disposed(by: dispose)
     }
@@ -117,7 +124,14 @@ class LendObjectsTableViewController: UITableViewController {
     }
     
     @IBAction func objectAddedUnwindAction(unwindSegue: UIStoryboardSegue) {
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "UsingToUsersOverviewSegue" {
+            if let viewController = segue.destination as? UsersOverviewTableViewController {
+                viewController.users = self.users
+            }
+        }
     }
 
 }

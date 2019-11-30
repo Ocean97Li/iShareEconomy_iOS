@@ -16,6 +16,8 @@ class ObjectDetailTableViewController: UITableViewController {
     
     let dispose = DisposeBag()
     
+    var fromOverview: Bool = false
+    
     var object: LendObject? = nil
     var userDetailId = ""
     
@@ -28,7 +30,7 @@ class ObjectDetailTableViewController: UITableViewController {
             if let id = $0.element {
                 self.userDetailId = id
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "UserDetailSegue", sender: nil)
+                    self.performSegue(withIdentifier: "UserDetailModalSegue", sender: nil)
                 }
             }
         }).disposed(by: dispose)
@@ -86,7 +88,7 @@ class ObjectDetailTableViewController: UITableViewController {
             let cell: ObjectUserOwnerTableViewCell
             cell = tableView.dequeueReusableCell(withIdentifier: "ObjectUserOwnerCell", for: indexPath) as! ObjectUserOwnerTableViewCell
             cell.selectionStyle = .none
-            cell.update(id: owner.userId, name: owner.userName, subtitle: nil, owner: true)
+            cell.update(id: owner.userId, name: owner.userName, subtitle: nil, owner: true, info: true)
             return cell
         } else if indexPath.section == 2 { //current user
             let cell: ObjectUserOwnerTableViewCell
@@ -94,7 +96,7 @@ class ObjectDetailTableViewController: UITableViewController {
             cell.selectionStyle = .none
             if let user = object?.currentUser {
                 let subtitle = objectUserFromToString(user)
-                cell.update(id: user.userId, name: user.userName, subtitle: subtitle, owner: false)
+                cell.update(id: user.userId, name: user.userName, subtitle: subtitle, owner: false, info: true)
             }
             return cell
         } else { // waitinglist
@@ -103,7 +105,7 @@ class ObjectDetailTableViewController: UITableViewController {
             cell.selectionStyle = .none
             let waitingUser = object!.waitinglist[indexPath.row]
             let subtitle = objectUserFromToString(waitingUser)
-            cell.update(id: waitingUser.userId, name: waitingUser.userName, subtitle: subtitle, owner: false)
+            cell.update(id: waitingUser.userId, name: waitingUser.userName, subtitle: subtitle, owner: false, info: true)
             return cell
         }
     }
@@ -128,11 +130,13 @@ class ObjectDetailTableViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "UserDetailSegue" {
+        if segue.identifier == "UserDetailModalSegue" {
             if let viewController = segue.destination.children[0] as? UserDetailTableViewController,
                   let user = self.userController.getLocalUser(by: userDetailId) {
                       viewController.user = user
                       viewController.isMe = true
+                viewController.fromOverview = self.fromOverview
+                      segue.destination.presentationController?.delegate = viewController
                   }
         }
     }

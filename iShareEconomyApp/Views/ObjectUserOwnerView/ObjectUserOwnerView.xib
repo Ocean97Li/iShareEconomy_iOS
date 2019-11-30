@@ -12,6 +12,7 @@
                 <outlet property="containerView" destination="iN0-l3-epB" id="ZOd-Bk-ZiX"/>
                 <outlet property="nameLabel" destination="3Xk-ZH-aCg" id="oLO-Yx-JYn"/>
                 <outlet property="subtitleLabel" destination="EYZ-Yh-wNF" id="zFE-pV-m3F"/>
+                <outlet property="userDetailButton" destination="da4-5G-fI6" id="4Zj-dJ-3aw"/>
                 <outlet property="userOwnerImage" destination="mFV-FG-mpw" id="p53-RG-wwb"/>
             </connections>
         </placeholder>
@@ -51,12 +52,13 @@
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="da4-5G-fI6">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="da4-5G-fI6">
                                     <rect key="frame" x="364" y="0.0" width="50" height="80"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="50" id="mX4-wz-YGc"/>
                                     </constraints>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" image="chevron.right" catalog="system"/>
                                     <connections>
                                         <action selector="userDetail:" destination="-1" eventType="touchUpInside" id="eET-yY-L3d"/>
                                     </connections>
@@ -84,6 +86,7 @@
         </view>
     </objects>
     <resources>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
         <image name="person.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

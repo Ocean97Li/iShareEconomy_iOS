@@ -21,6 +21,8 @@ class ObjectUserOwnerView: UIView {
     
     @IBOutlet var subtitleLabel: UILabel!
     
+    @IBOutlet var userDetailButton: UIButton!
+    
     @IBAction func userDetail(_ sender: Any) {
         if let id = self.userId {
             cellCoordinator.updateUserHeader(with: id)
@@ -29,9 +31,10 @@ class ObjectUserOwnerView: UIView {
     
     var userId: String? = nil
     
-    func update(id: String, name: String, subtitle: String?, owner: Bool = false) {
+    func update(id: String, name: String, subtitle: String?, owner: Bool = false, info: Bool = false) {
         self.userId = id
         self.nameLabel.text = name
+        self.userDetailButton.isHidden = false
         
         if let subtitle = subtitle {
             self.subtitleLabel.text = subtitle
@@ -42,6 +45,12 @@ class ObjectUserOwnerView: UIView {
         
         if owner {
             self.userOwnerImage.image = UIImage(systemName: "person.circle")
+        }
+        
+        if info {
+            self.userDetailButton.setImage(UIImage(systemName: "info.circle"), for: .normal)
+        } else {
+             self.userDetailButton.setImage(UIImage(systemName: "chevron.right"), for: .normal)
         }
     }
     
@@ -59,5 +68,6 @@ class ObjectUserOwnerView: UIView {
         Bundle.main.loadNibNamed(kCONTENT_XIB_NAME, owner: self, options: nil)
         containerView.fixInView(self)
         subtitleLabel.isHidden = true
+        userDetailButton.isHidden = true
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class UserDetailTableViewController: UITableViewController {
+class UserDetailTableViewController: UITableViewController, UIAdaptivePresentationControllerDelegate {
 
     var user: User? = nil {
         didSet {
@@ -20,14 +20,22 @@ class UserDetailTableViewController: UITableViewController {
     
     var selectedObject: LendObject? = nil
     
+    let cellCoordinator = CellCoordinator.shared
+    
     var isMe: Bool = false
+    var fromOverview: Bool = false
     
     let dispose = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.allowsSelection = true
-        
+        if (fromOverview) {
+            self.isModalInPresentation = false
+        } else {
+            self.isModalInPresentation = true
+        }
+       
     }
 
     // MARK: - Table view data source
@@ -116,12 +124,26 @@ class UserDetailTableViewController: UITableViewController {
             } else {
                 self.selectedObject = user.using[indexPath.row]
             }
-            performSegue(withIdentifier: "UserDetailToObjectDetailSegue", sender: nil)
+            if self.fromOverview {
+                 performSegue(withIdentifier: "UserDetailFromOverviewToObjectDetailSegue", sender: nil)
+            } else {
+                 performSegue(withIdentifier: "UserDetailToObjectDetailSegue", sender: nil)
+            }
        }
+    }
+    
+    func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
+        self.cellCoordinator.usersViewedStack.popLast()
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "UserDetailToObjectDetailSegue" {
+            if let viewController = segue.destination as? ObjectDetailTableViewController,
+                let object = selectedObject {
+                viewController.object = object
+            }
+        } else if segue.identifier == "UserDetailFromOverviewToObjectDetailSegue" {
             if let viewController = segue.destination as? ObjectDetailTableViewController,
                 let object = selectedObject {
                 viewController.object = object
