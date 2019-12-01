@@ -21,6 +21,7 @@ class RequestController {
     private var loginObject: LoginObject? = nil
     private let userController = UserController.shared
     private var users: [User] = []
+    private var loggedInUser: User? = nil
     
     private init() {
         
@@ -29,16 +30,23 @@ class RequestController {
                 self.users = users
             }
         }).disposed(by: dispose)
+        
+        userController.loggedInUser.subscribe({
+            if let loggedInUsers = $0.element as? User {
+                self.loggedInUser = loggedInUsers
+            }
+        }).disposed(by: dispose)
+        
         LoginController.shared.loggedIn.subscribe({
             if let loginObject = $0.element {
                 self.loginObject = loginObject
-                self.fetchRequests(withId: self.loginObject!.id, forMe: true)
-                self.fetchRequests(withId: self.loginObject!.id, forMe: false)
+                self.fetchRequests(withUserId: self.loginObject!.id, forMe: true)
+                self.fetchRequests(withUserId: self.loginObject!.id, forMe: false)
             }
         }).disposed(by: dispose)
     }
     
-    func fetchRequests(withId userId: String, forMe: Bool) {
+    func fetchRequests(withUserId userId: String, forMe: Bool) {
         var requestBox: String
         if forMe {
             requestBox = "inRequest"
@@ -74,8 +82,44 @@ class RequestController {
         task.resume()
     }
     
+    func approveInRequest(withId requestId: String) {
+        let url = URL(string: "https://ishare-economy-backend.herokuapp.com/API/users/\(loggedInUser!.id)/inRequest/\(requestId)/approve")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "post"
+        request.setValue("Bearer \(loginObject!.token)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let response = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            // Succeeded
+            self.fetchRequests(withUserId: self.loggedInUser!.id, forMe: true)
+        }
+        task.resume()
+    }
+    
+    func denyInRequest(withId requestId: String) {
+        let url = URL(string: "https://ishare-economy-backend.herokuapp.com/API/users/\(loggedInUser!.id)/inRequest/\(requestId)/deny")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "post"
+        request.setValue("Bearer \(loginObject!.token)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let _ = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            // Succeeded
+            self.fetchRequests(withUserId: self.loggedInUser!.id, forMe: true)
+        }
+        task.resume()
+    }
+    
     private func findObject(by id: String) -> LendObject? {
-        return self.users.flatMap { $0.lending }.first(where: {$0.id == id})
+        var usersALL = self.users
+        usersALL.append(loggedInUser!)
+        return usersALL.flatMap { $0.lending }.first(where: {$0.id == id})
     }
     
     public func extractRequestFromJSON(_ requestJSON: [String: Any]) -> Request? {

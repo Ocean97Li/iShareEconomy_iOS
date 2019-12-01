@@ -91,14 +91,45 @@ class RequestsTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editAction = UIContextualAction(style: .normal, title: "Approve") { (action, view, completionHandler) in
+            let inbox: [Request]
+            if indexPath.section == 0 {
+                inbox = self.outRequests
+            } else {
+                inbox = self.inRequests
+            }
+            let requestId = (indexPath.section == 0 ? self.outRequests : self.inRequests)[indexPath.row].id
+            self.requestController.approveInRequest(withId: requestId)
+            completionHandler(true)
+        }
+        editAction.backgroundColor = .systemGreen
+        editAction.image = UIImage(systemName: "checkmark")
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+        let deleteAction = UIContextualAction(style: .normal, title: "Deny") { (action, view, completionHandler) in
+            let inbox: [Request]
+            if indexPath.section == 0 {
+                inbox = self.outRequests
+            } else {
+                inbox = self.inRequests
+            }
+            let requestId = (indexPath.section == 0 ? self.outRequests : self.inRequests)[indexPath.row].id
+            self.requestController.denyInRequest(withId: requestId)
+            completionHandler(true)
+        }
+        deleteAction.backgroundColor = .systemRed
+        deleteAction.image = UIImage(systemName: "xmark")
+
+        return UISwipeActionsConfiguration(actions: [editAction, deleteAction])
     }
-    */
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.section == 1 {
+            return inRequests[indexPath.row].approved == nil
+        }
+        return false
+    }
 
     /*
     // Override to support editing the table view.

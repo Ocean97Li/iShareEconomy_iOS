@@ -19,6 +19,7 @@ class RequestView: UIView {
     
     func update(with request: Request) {
         sourceToOwnerLabel.text = "\(request.source.userName) →  \(request.object.owner.userName)\((request.approved != nil ? (request.approved! ? " ✅":" ❌") : ""))"
+            
         lendObjectView.object = request.object
         fromDateToDateLabel.text = "From \(request.fromDate.toShortString()) to \(request.toDate.toShortString())"
     }
