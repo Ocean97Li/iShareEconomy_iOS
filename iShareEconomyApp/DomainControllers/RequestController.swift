@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 class RequestController {
-    let shared = RequestController()
+    static let shared = RequestController()
     private let dispose = DisposeBag()
     
     let requests = BehaviorSubject<[Request]?>(value: nil)
@@ -20,6 +20,7 @@ class RequestController {
     private var users: [User] = []
     
     private init() {
+        
        userController.users.subscribe({
             if let users = $0.element as? [User] {
                 self.users = users
@@ -28,6 +29,7 @@ class RequestController {
         LoginController.shared.loggedIn.subscribe({
             if let loginObject = $0.element {
                 self.loginObject = loginObject
+                self.inRequest(withId: self.loginObject!.id)
             }
         }).disposed(by: dispose)
     }

@@ -320,6 +320,7 @@
                     <connections>
                         <segue destination="Ibb-zN-nCz" kind="relationship" relationship="viewControllers" id="wS8-O3-lv8"/>
                         <segue destination="TBJ-2V-5Gh" kind="relationship" relationship="viewControllers" id="Hf3-Wi-TXP"/>
+                        <segue destination="mjJ-W4-8Kf" kind="relationship" relationship="viewControllers" id="uAh-6B-GTw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -702,7 +703,6 @@
         <!--Navigation Controller-->
         <scene sceneID="poX-cs-rB1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8rB-FX-Mdo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Iml-5N-sz2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="gku-6v-TSC"/>
@@ -715,6 +715,7 @@
                         <segue destination="RSc-pg-NTu" kind="relationship" relationship="rootViewController" id="SYg-pk-fBT"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8rB-FX-Mdo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7091" y="-659"/>
         </scene>
@@ -786,6 +787,52 @@
             </objects>
             <point key="canvasLocation" x="4503" y="-377"/>
         </scene>
+        <!--Requests Table View Controller-->
+        <scene sceneID="zLY-VR-qWL">
+            <objects>
+                <tableViewController id="2Cn-N6-hBJ" customClass="RequestsTableViewController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wmS-rB-7LL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="sW4-eE-f1h">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sW4-eE-f1h" id="0sg-Zo-BuF">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2Cn-N6-hBJ" id="ubS-ib-bP5"/>
+                            <outlet property="delegate" destination="2Cn-N6-hBJ" id="bsA-zT-U8v"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="e1I-ag-KSi"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1aN-2I-tzc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4503" y="350"/>
+        </scene>
+        <!--Requests-->
+        <scene sceneID="mJi-i3-x0T">
+            <objects>
+                <navigationController storyboardIdentifier="Requests" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mjJ-W4-8Kf" userLabel="Requests" customClass="CustomNavigationController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Requests" image="envelope" catalog="system" id="YGY-98-U7n"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="p0N-4G-0kC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2Cn-N6-hBJ" kind="relationship" relationship="rootViewController" id="kYK-NB-qsQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nai-QB-FUS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3661" y="350"/>
+        </scene>
         <!--UsersOverview-->
         <scene sceneID="tNx-MB-xsx">
             <objects>
@@ -851,6 +898,7 @@
     </scenes>
     <resources>
         <image name="car.fill" catalog="system" width="64" height="46"/>
+        <image name="envelope" catalog="system" width="64" height="46"/>
         <image name="hammer" catalog="system" width="64" height="56"/>
         <image name="hammer.fill" catalog="system" width="64" height="56"/>
         <image name="hand.point.left" catalog="system" width="64" height="48"/>
