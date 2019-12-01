@@ -29,13 +29,20 @@ class RequestController {
         LoginController.shared.loggedIn.subscribe({
             if let loginObject = $0.element {
                 self.loginObject = loginObject
-                self.inRequest(withId: self.loginObject!.id)
+                self.fetchRequests(withId: self.loginObject!.id, forMe: true)
+                self.fetchRequests(withId: self.loginObject!.id, forMe: false)
             }
         }).disposed(by: dispose)
     }
     
-    func inRequest(withId userId: String) {
-        let url = URL(string: "https://ishare-economy-backend.herokuapp.com/API/users/\(userId)/inRequest")!
+    func fetchRequests(withId userId: String, forMe: Bool) {
+        var requestBox: String
+        if forMe {
+            requestBox = "inRequest"
+        } else {
+            requestBox = "outRequest"
+        }
+        let url = URL(string: "https://ishare-economy-backend.herokuapp.com/API/users/\(userId)/\(requestBox)")!
         var request = URLRequest(url: url)
         request.httpMethod = "get"
         request.setValue("Bearer \(loginObject!.token)", forHTTPHeaderField: "Authorization")
