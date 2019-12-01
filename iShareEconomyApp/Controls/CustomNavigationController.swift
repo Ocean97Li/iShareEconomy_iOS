@@ -10,8 +10,6 @@ import UIKit
 import RxSwift
 
 class CustomNavigationController: UINavigationController {
-
-    var lending: [LendObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

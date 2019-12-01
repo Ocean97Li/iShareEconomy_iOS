@@ -796,13 +796,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="sW4-eE-f1h">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RequestCell" id="sW4-eE-f1h" customClass="RequestTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="180.33332824707031"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sW4-eE-f1h" id="0sg-Zo-BuF">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="180.33332824707031"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HDB-PY-Vhd" customClass="RequestView" customModule="iShareEconomyApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="180.33333333333334"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pcs-eT-MBW" customClass="RequestView" customModule="iShareEconomyApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="180.33333333333334"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="180" id="OV3-OF-hYf"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="Pcs-eT-MBW" firstAttribute="leading" secondItem="HDB-PY-Vhd" secondAttribute="leading" id="3HB-ca-zRg"/>
+                                                <constraint firstItem="Pcs-eT-MBW" firstAttribute="top" secondItem="HDB-PY-Vhd" secondAttribute="top" id="W3B-Zk-VH4"/>
+                                                <constraint firstAttribute="bottom" secondItem="Pcs-eT-MBW" secondAttribute="bottom" id="aeL-oa-x1b"/>
+                                                <constraint firstAttribute="trailing" secondItem="Pcs-eT-MBW" secondAttribute="trailing" id="kEH-i0-dr5"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="HDB-PY-Vhd" secondAttribute="bottom" id="V6Y-TG-bqw"/>
+                                        <constraint firstItem="HDB-PY-Vhd" firstAttribute="leading" secondItem="0sg-Zo-BuF" secondAttribute="leading" id="mD6-g6-r5V"/>
+                                        <constraint firstAttribute="trailing" secondItem="HDB-PY-Vhd" secondAttribute="trailing" id="orE-Qn-2dm"/>
+                                        <constraint firstItem="HDB-PY-Vhd" firstAttribute="top" secondItem="0sg-Zo-BuF" secondAttribute="top" id="t8K-nr-jfO"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="requestView" destination="HDB-PY-Vhd" id="sik-2s-9Ku"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

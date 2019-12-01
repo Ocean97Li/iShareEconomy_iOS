@@ -47,6 +47,7 @@
 		93F8912D2393C10900793592 /* RequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8912C2393C10900793592 /* RequestsTableViewController.swift */; };
 		93F891302393DE8C00793592 /* RequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8912F2393DE8C00793592 /* RequestView.swift */; };
 		93F891322393DE9E00793592 /* RequestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93F891312393DE9E00793592 /* RequestView.xib */; };
+		93F891342393FE7A00793592 /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F891332393FE7A00793592 /* RequestTableViewCell.swift */; };
 		93FB2EDB238590F500FE220E /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FB2EDA238590F500FE220E /* DateFormatting.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,7 @@
 		93F8912C2393C10900793592 /* RequestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTableViewController.swift; sourceTree = "<group>"; };
 		93F8912F2393DE8C00793592 /* RequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestView.swift; sourceTree = "<group>"; };
 		93F891312393DE9E00793592 /* RequestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestView.xib; sourceTree = "<group>"; };
+		93F891332393FE7A00793592 /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
 		93FB2EDA238590F500FE220E /* DateFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 		9336EBB823780D7200AB51C0 /* iShareEconomyApp */ = {
 			isa = PBXGroup;
 			children = (
+				935858F22386C42D0052C623 /* Controls */,
 				938BD7BF23841A62001C06B8 /* Views */,
 				93CD1618237C828E00DFC5D7 /* ViewControllers */,
 				93CD1617237C81B600DFC5D7 /* DomainControllers */,
@@ -189,7 +192,8 @@
 				935858EF2386BE1C0052C623 /* ObjectUserOwnerTableViewCell.swift */,
 				9336E345237ED77200C99251 /* LendObjectTableViewCell.swift */,
 				93A8F7B0238FF03A00917DD6 /* UserHeaderTableViewCell.swift */,
-				9334EC192390110E00C48BB4 /* CellCoordinator.swift */,
+				93F891352393FE8A00793592 /* CellCoordinator */,
+				93F891332393FE7A00793592 /* RequestTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -249,7 +253,6 @@
 		93CD1618237C828E00DFC5D7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				935858F22386C42D0052C623 /* Controls */,
 				935858F12386C4000052C623 /* TableViewControllers */,
 				935858F52386C4E80052C623 /* Login */,
 			);
@@ -273,6 +276,14 @@
 				93F8912F2393DE8C00793592 /* RequestView.swift */,
 			);
 			path = RequestView;
+			sourceTree = "<group>";
+		};
+		93F891352393FE8A00793592 /* CellCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				9334EC192390110E00C48BB4 /* CellCoordinator.swift */,
+			);
+			path = CellCoordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,6 +398,7 @@
 				935858EE2386B8110052C623 /* ObjectDetailTableViewController.swift in Sources */,
 				93F891302393DE8C00793592 /* RequestView.swift in Sources */,
 				93F8912D2393C10900793592 /* RequestsTableViewController.swift in Sources */,
+				93F891342393FE7A00793592 /* RequestTableViewCell.swift in Sources */,
 				93A8F7AD238FDC6D00917DD6 /* RoundingDouble.swift in Sources */,
 				9336EBBC23780D7200AB51C0 /* SceneDelegate.swift in Sources */,
 			);

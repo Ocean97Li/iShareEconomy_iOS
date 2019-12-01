@@ -13,7 +13,10 @@ class RequestController {
     static let shared = RequestController()
     private let dispose = DisposeBag()
     
-    let requests = BehaviorSubject<[Request]?>(value: nil)
+    // Requests for me
+    let inRequests = BehaviorSubject<[Request]?>(value: nil)
+    // Requests by me
+    let outRequests = BehaviorSubject<[Request]?>(value: nil)
     
     private var loginObject: LoginObject? = nil
     private let userController = UserController.shared
@@ -62,7 +65,11 @@ class RequestController {
                     }
                 }
             }
-            self.requests.onNext(requests)
+            if forMe { //Add to requests for me
+                self.inRequests.onNext(requests)
+            } else { //Add to requests made by me
+                self.outRequests.onNext(requests)
+            }
         }
         task.resume()
     }
@@ -81,8 +88,8 @@ class RequestController {
         let fromDateString = requestJSON["fromdate"] as? String,
         let fromDate = Date.fromUTCString(fromDateString),
         let toDateString = requestJSON["todate"] as? String,
-        let toDate = Date.fromUTCString(toDateString),
-        let approved = requestJSON["approved"] as? Bool {
+        let toDate = Date.fromUTCString(toDateString) {
+            let approved = requestJSON["approved"] as? Bool
             let request = Request(id: id, source: source, object: object, fromDate: fromDate, toDate: toDate, approved: approved)
             return request
         }

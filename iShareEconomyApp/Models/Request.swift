@@ -14,5 +14,5 @@ struct Request {
     let object: LendObject
     let fromDate: Date
     let toDate: Date
-    let approved: Bool
+    let approved: Bool?
 }
