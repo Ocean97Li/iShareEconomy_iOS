@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DyN-Iw-Kjm">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,22 +12,22 @@
             <objects>
                 <tableViewController title="LendObjects" id="vWi-iO-yoe" userLabel="SharingLendObjects" customClass="LendObjectsTableViewController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" id="gp2-O5-1fY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LendObjectCell" id="l3F-KZ-ibT" userLabel="LendObjectCell" customClass="LendObjectTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="80.333335876464844"/>
+                                <rect key="frame" x="0.0" y="28" width="896" height="80.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l3F-KZ-ibT" id="h11-mm-Nkp">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.333335876464844"/>
+                                    <rect key="frame" x="44" y="0.0" width="808" height="80.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtH-ru-EaI">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="808" height="80.5"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vl-iJ-DDd" customClass="LendObjectView" customModule="iShareEconomyApp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="808" height="80.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="Kdc-pu-znw"/>
@@ -74,7 +74,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="removeItemBarButton" destination="bKD-EK-yxC" id="ZUo-RN-1OH"/>
-                        <segue destination="Aii-tx-Hgk" kind="show" identifier="SharingToObjectDetailSegue" id="rhp-Lu-fZj"/>
+                        <segue destination="Aii-tx-Hgk" kind="showDetail" identifier="SharingToObjectDetailSegue" id="rhp-Lu-fZj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="098-iA-UN2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -86,19 +86,19 @@
             <objects>
                 <tableViewController storyboardIdentifier="UserDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RSc-pg-NTu" customClass="UserDetailTableViewController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TsX-yz-AKK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserHeaderCell" id="3Rx-XG-5a5" customClass="UserHeaderTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="200.33332824707031"/>
+                                <rect key="frame" x="0.0" y="28" width="896" height="200.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Rx-XG-5a5" id="eC8-rb-IZa">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200.33332824707031"/>
+                                    <rect key="frame" x="44" y="0.0" width="808" height="200.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JiF-jH-urE" customClass="UserHeaderView" customModule="iShareEconomyApp" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200.33333333333334"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="808" height="200.5"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="200" id="yzl-Ih-otd"/>
@@ -118,17 +118,17 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LendObjectCell" id="99N-9h-iL7" userLabel="LendObjectCell" customClass="LendObjectTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="228.33332824707031" width="414" height="80.333335876464844"/>
+                                <rect key="frame" x="0.0" y="228.5" width="896" height="80.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="99N-9h-iL7" id="1mV-lr-A4V">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.333335876464844"/>
+                                    <rect key="frame" x="44" y="0.0" width="808" height="80.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ok-qu-5gW">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="808" height="80.5"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oA6-ey-vdl" customClass="LendObjectView" customModule="iShareEconomyApp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="808" height="80.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="3wg-u9-Fwa"/>
@@ -176,7 +176,7 @@
                 <navigationController id="Aii-tx-Hgk" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ySN-Hz-bqC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="sns-kB-S7q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -192,7 +192,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="ObjectDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vuf-4b-ERD" customClass="ObjectDetailTableViewController" customModule="iShareEconomyApp" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="buW-jx-eph">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -200,17 +200,17 @@
                         <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ObjectUserOwnerCell" id="P6X-QP-Xs1" userLabel="ObjectUserOwnerCell" customClass="ObjectUserOwnerTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="28" width="896" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P6X-QP-Xs1" id="QFy-hY-kQ6">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <rect key="frame" x="44" y="0.0" width="808" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78d-cQ-uUw">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="808" height="80"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Osn-aA-ey9" customClass="ObjectUserOwnerView" customModule="iShareEconomyApp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="808" height="80"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="1dE-fb-six"/>
@@ -238,17 +238,17 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LendObjectCell" id="TJI-vz-aXE" userLabel="LendObjectCell" customClass="LendObjectTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="108" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="108" width="896" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TJI-vz-aXE" id="CzX-pY-1tv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <rect key="frame" x="44" y="0.0" width="808" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVp-Qj-4Kq">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="808" height="80"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTS-xt-JCc" customClass="LendObjectView" customModule="iShareEconomyApp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="808" height="80"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="YPj-Y3-Fww"/>
@@ -276,14 +276,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ButtonCell" id="3DR-xb-Klk" customClass="ButtonTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="188" width="414" height="110"/>
+                                <rect key="frame" x="0.0" y="188" width="896" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3DR-xb-Klk" id="j6p-US-qwJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                    <rect key="frame" x="44" y="0.0" width="808" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eop-Rl-3qA">
-                                            <rect key="frame" x="15" y="15" width="384" height="80"/>
+                                            <rect key="frame" x="15" y="15" width="778" height="80"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="80" id="3cn-BQ-GsY"/>
@@ -330,7 +330,7 @@
                 <navigationController storyboardIdentifier="Using" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TBJ-2V-5Gh" customClass="CustomNavigationController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Using" image="hand.point.left" catalog="system" id="eGn-yc-8Bj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jn2-S3-b4t">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -366,23 +366,23 @@
             <objects>
                 <viewController id="dux-Jh-cdo" customClass="LoginViewController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N8I-ei-zyQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Tn-l4-sfF" userLabel="holder">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="44" y="0.0" width="808" height="393"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DRX-NV-E2G">
-                                        <rect key="frame" x="101" y="231" width="212" height="274"/>
+                                        <rect key="frame" x="298" y="59.5" width="212" height="274"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrC-wZ-D2c">
-                                                <rect key="frame" x="73.666666666666657" y="0.0" width="65" height="30"/>
+                                                <rect key="frame" x="73.5" y="0.0" width="65" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QZX-CD-A0N">
-                                                <rect key="frame" x="50" y="31.000000000000007" width="112" height="110.66666666666669"/>
+                                                <rect key="frame" x="50" y="30.5" width="112" height="111"/>
                                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="QZX-CD-A0N" secondAttribute="height" multiplier="1:1" id="e1z-af-iey"/>
@@ -408,7 +408,7 @@
                                                 <rect key="frame" x="0.0" y="210" width="212" height="32"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No account yet? Sign up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCV-0H-vN0">
-                                                        <rect key="frame" x="0.0" y="6.3333333333333144" width="174" height="19.333333333333332"/>
+                                                        <rect key="frame" x="0.0" y="6.5" width="174" height="19.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -498,7 +498,7 @@
                     <tabBarItem key="tabBarItem" title="Sharing" image="hammer" catalog="system" id="ZQX-nK-1P3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="QcP-lO-O4R">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -515,69 +515,105 @@
             <objects>
                 <tableViewController id="X3u-3p-7pE" customClass="CreateLendObjectTableViewController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eE4-3E-tYj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
                             <tableViewSection headerTitle="Item Type :" id="bos-4o-wJs">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TypeButtonsCell" rowHeight="90" id="CgX-Cy-3U8">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                        <rect key="frame" x="0.0" y="28" width="896" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CgX-Cy-3U8" id="ngx-X9-1X8">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                            <rect key="frame" x="44" y="0.0" width="808" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Et6-xA-hdI">
-                                                    <rect key="frame" x="67" y="0.0" width="280" height="90"/>
+                                                    <rect key="frame" x="58.5" y="0.0" width="691.5" height="90"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="Lfp-eP-0Fc">
-                                                            <rect key="frame" x="20" y="20" width="240" height="50"/>
+                                                            <rect key="frame" x="20" y="20" width="651.5" height="50"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Uy-Zo-ETT">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
                                                                     <accessibility key="accessibilityConfiguration" identifier="Tool"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="50" id="XGN-O8-q6N"/>
-                                                                        <constraint firstAttribute="width" constant="50" id="y8I-8J-CSk"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="MEI-0w-lIy"/>
+                                                                        <constraint firstAttribute="width" constant="50" id="Uot-vH-jAj"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                                     <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <state key="normal" title="Button" image="hammer.fill" catalog="system">
                                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25" scale="large"/>
                                                                     </state>
+                                                                    <variation key="default">
+                                                                        <mask key="constraints">
+                                                                            <exclude reference="MEI-0w-lIy"/>
+                                                                            <exclude reference="Uot-vH-jAj"/>
+                                                                        </mask>
+                                                                    </variation>
+                                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                                        <mask key="constraints">
+                                                                            <include reference="MEI-0w-lIy"/>
+                                                                            <include reference="Uot-vH-jAj"/>
+                                                                        </mask>
+                                                                    </variation>
                                                                     <connections>
                                                                         <action selector="typeSelectAction:" destination="X3u-3p-7pE" eventType="touchUpInside" id="N5C-Cm-fVA"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKa-Xo-UfS">
-                                                                    <rect key="frame" x="95" y="0.0" width="50" height="50"/>
+                                                                    <rect key="frame" x="232.5" y="0.0" width="190" height="50"/>
                                                                     <accessibility key="accessibilityConfiguration" identifier="Service"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="50" id="MVu-3m-ryn"/>
-                                                                        <constraint firstAttribute="width" constant="50" id="yzV-dy-ZOc"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="5nA-m8-SfY"/>
+                                                                        <constraint firstAttribute="width" constant="50" id="VqB-ic-Lgm"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                                     <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <state key="normal" title="Button" image="person.2.fill" catalog="system">
                                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25" scale="large"/>
                                                                     </state>
+                                                                    <variation key="default">
+                                                                        <mask key="constraints">
+                                                                            <exclude reference="5nA-m8-SfY"/>
+                                                                            <exclude reference="VqB-ic-Lgm"/>
+                                                                        </mask>
+                                                                    </variation>
+                                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                                        <mask key="constraints">
+                                                                            <include reference="5nA-m8-SfY"/>
+                                                                            <include reference="VqB-ic-Lgm"/>
+                                                                        </mask>
+                                                                    </variation>
                                                                     <connections>
                                                                         <action selector="typeSelectAction:" destination="X3u-3p-7pE" eventType="touchUpInside" id="ZYR-cr-aQ8"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxF-Rx-RQn">
-                                                                    <rect key="frame" x="190" y="0.0" width="50" height="50"/>
+                                                                    <rect key="frame" x="467.5" y="0.0" width="184" height="50"/>
                                                                     <accessibility key="accessibilityConfiguration" identifier="Transport"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="50" id="ecr-nS-0lk"/>
-                                                                        <constraint firstAttribute="width" constant="50" id="siV-kc-wDV"/>
+                                                                        <constraint firstAttribute="width" constant="50" id="3Ov-rb-TmB"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="stY-K3-u5b"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                                     <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <state key="normal" title="Button" image="car.fill" catalog="system">
                                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25" scale="large"/>
                                                                     </state>
+                                                                    <variation key="default">
+                                                                        <mask key="constraints">
+                                                                            <exclude reference="3Ov-rb-TmB"/>
+                                                                            <exclude reference="stY-K3-u5b"/>
+                                                                        </mask>
+                                                                    </variation>
+                                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                                        <mask key="constraints">
+                                                                            <include reference="3Ov-rb-TmB"/>
+                                                                            <include reference="stY-K3-u5b"/>
+                                                                        </mask>
+                                                                    </variation>
                                                                     <connections>
                                                                         <action selector="typeSelectAction:" destination="X3u-3p-7pE" eventType="touchUpInside" id="qV8-FK-3aZ"/>
                                                                     </connections>
@@ -586,6 +622,11 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="Mnq-RR-tzq"/>
                                                             </constraints>
+                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="Mnq-RR-tzq"/>
+                                                                </mask>
+                                                            </variation>
                                                         </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -608,14 +649,14 @@
                             <tableViewSection headerTitle="Name :" id="QYG-Nm-XjP">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TitleCell" rowHeight="78" id="uNA-rG-vQz">
-                                        <rect key="frame" x="0.0" y="174" width="414" height="78"/>
+                                        <rect key="frame" x="0.0" y="174" width="896" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uNA-rG-vQz" id="JLJ-Gr-kTm">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="78"/>
+                                            <rect key="frame" x="44" y="0.0" width="808" height="78"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a name here (25 char max.)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQQ-A3-Y3p" userLabel="name">
-                                                    <rect key="frame" x="20" y="20" width="374" height="38"/>
+                                                    <rect key="frame" x="20" y="20" width="768" height="38"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -636,14 +677,14 @@
                             <tableViewSection headerTitle="Description:" id="22t-5a-p0N">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TitleCell" rowHeight="78" id="pVi-8A-KOf" userLabel="DescriptionCell">
-                                        <rect key="frame" x="0.0" y="308" width="414" height="78"/>
+                                        <rect key="frame" x="0.0" y="308" width="896" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pVi-8A-KOf" id="3Ru-xb-x1w">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="78"/>
+                                            <rect key="frame" x="44" y="0.0" width="808" height="78"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a description here (25 char max.)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dAJ-Zh-g2q" userLabel="description">
-                                                    <rect key="frame" x="20" y="20" width="374" height="38"/>
+                                                    <rect key="frame" x="20" y="20" width="768" height="38"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -664,14 +705,14 @@
                             <tableViewSection id="w8J-rY-UzH">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TitleCell" rowHeight="100" id="DZ8-Dm-QhA" userLabel="SubmitButtonsCell">
-                                        <rect key="frame" x="0.0" y="442" width="414" height="100"/>
+                                        <rect key="frame" x="0.0" y="442" width="896" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DZ8-Dm-QhA" id="T4G-Dx-4Bm">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <rect key="frame" x="44" y="0.0" width="808" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIk-WT-I3j">
-                                                    <rect key="frame" x="82" y="25" width="250" height="50"/>
+                                                    <rect key="frame" x="279" y="25" width="250" height="50"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="HMP-FZ-TyP"/>
@@ -714,7 +755,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y6p-Wr-LFW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="18c-ra-mMv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6184" y="-1382"/>
+            <point key="canvasLocation" x="6552" y="-1385"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AYx-9D-bft">
@@ -722,7 +763,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lKJ-jB-J3G" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="dJZ-BD-d4e">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -741,7 +782,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="gku-6v-TSC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GWe-ec-XoY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -758,22 +799,22 @@
             <objects>
                 <tableViewController title="LendObjects" id="hh1-wm-7uz" userLabel="UsingLendObjects" customClass="LendObjectsTableViewController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" id="rX4-cI-tvb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LendObjectCell" id="rdy-4O-YkC" userLabel="LendObjectCell" customClass="LendObjectTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="80.333335876464844"/>
+                                <rect key="frame" x="0.0" y="28" width="896" height="80.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rdy-4O-YkC" id="NFa-TI-69V">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.333335876464844"/>
+                                    <rect key="frame" x="44" y="0.0" width="808" height="80.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcB-kq-yho">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="808" height="80.5"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPx-mM-ocY" customClass="LendObjectView" customModule="iShareEconomyApp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="808" height="80.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="FYO-X7-K3a"/>
@@ -814,7 +855,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Aii-tx-Hgk" kind="show" identifier="UsingToObjectDetailSegue" id="tjF-gf-ejk"/>
+                        <segue destination="Aii-tx-Hgk" kind="showDetail" identifier="UsingToObjectDetailSegue" id="tjF-gf-ejk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRy-jq-81u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -826,22 +867,22 @@
             <objects>
                 <tableViewController id="2Cn-N6-hBJ" customClass="RequestsTableViewController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wmS-rB-7LL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RequestCell" id="sW4-eE-f1h" customClass="RequestTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="180.33332824707031"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RequestCell" id="sW4-eE-f1h" customClass="RequestTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="896" height="180.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sW4-eE-f1h" id="0sg-Zo-BuF">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="180.33332824707031"/>
+                                    <rect key="frame" x="44" y="0.0" width="808" height="180.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HDB-PY-Vhd" customClass="RequestView" customModule="iShareEconomyApp" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="180.33333333333334"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="808" height="180.5"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pcs-eT-MBW" customClass="RequestView" customModule="iShareEconomyApp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="180.33333333333334"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="808" height="180.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="180" id="OV3-OF-hYf"/>
@@ -864,7 +905,6 @@
                                         <constraint firstItem="HDB-PY-Vhd" firstAttribute="top" secondItem="0sg-Zo-BuF" secondAttribute="top" id="t8K-nr-jfO"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <connections>
                                     <outlet property="requestView" destination="HDB-PY-Vhd" id="sik-2s-9Ku"/>
                                 </connections>
@@ -888,7 +928,7 @@
                     <tabBarItem key="tabBarItem" title="Requests" image="envelope" catalog="system" id="YGY-98-U7n"/>
                     <navigationItem key="navigationItem" id="HLg-cz-f9N"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="p0N-4G-0kC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -904,22 +944,22 @@
             <objects>
                 <tableViewController id="dC1-EV-0rg" userLabel="UsersOverview" customClass="UsersOverviewTableViewController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Heq-gy-zKt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ObjectUserOwnerCell" id="aSP-7J-H05" userLabel="ObjectUserOwnerCell" customClass="ObjectUserOwnerTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="80.333335876464844"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationLevel="3" indentationWidth="10" reuseIdentifier="ObjectUserOwnerCell" id="aSP-7J-H05" userLabel="ObjectUserOwnerCell" customClass="ObjectUserOwnerTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="896" height="80.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aSP-7J-H05" id="2LO-lm-xHm">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.333335876464844"/>
+                                    <rect key="frame" x="44" y="0.0" width="808" height="80.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vMz-zw-86T">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="808" height="80.5"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PhZ-12-uXE" customClass="ObjectUserOwnerView" customModule="iShareEconomyApp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="808" height="80.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="VfP-yG-lPd"/>
@@ -942,7 +982,7 @@
                                         <constraint firstAttribute="trailing" secondItem="vMz-zw-86T" secondAttribute="trailing" id="s4A-D8-YWZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="2" maxY="0.0"/>
                                 <connections>
                                     <outlet property="objectUserOwnerView" destination="PhZ-12-uXE" id="cVv-xo-lSq"/>
                                 </connections>
@@ -967,24 +1007,24 @@
             <objects>
                 <tableViewController id="wUa-XP-f0h" customClass="CreateRequestTableViewController" customModule="iShareEconomyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tNp-ho-noo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
                             <tableViewSection headerTitle="For lending:" id="haV-5U-Xlm">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LendObjectCell" rowHeight="80" id="eSb-le-T1B" userLabel="LendObjectCell" customClass="LendObjectTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="28" width="896" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eSb-le-T1B" id="bSP-VG-0Qk">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="44" y="0.0" width="808" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIh-BL-VPP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="808" height="80"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuI-ls-6Wx" customClass="LendObjectView" customModule="iShareEconomyApp" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="808" height="80"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="80" id="FWf-9M-7hU"/>
@@ -1014,17 +1054,17 @@
                             <tableViewSection headerTitle="Starting from:" id="qg6-GA-JUN">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DateInputCell" rowHeight="70" id="d65-ss-3Lq" customClass="DatePickerTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="164" width="414" height="70"/>
+                                        <rect key="frame" x="0.0" y="164" width="896" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d65-ss-3Lq" id="m8S-Hu-IpI">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <rect key="frame" x="44" y="0.0" width="808" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="QsB-v4-2ES">
-                                                    <rect key="frame" x="30" y="20" width="354" height="30"/>
+                                                    <rect key="frame" x="30" y="20" width="748" height="30"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NId-bQ-Fbc">
-                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="748" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="jw1-Zj-dKW"/>
                                                             </constraints>
@@ -1054,17 +1094,17 @@
                             <tableViewSection headerTitle="Untill:" id="iLC-yo-p8K">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DateInputCell" rowHeight="70" id="eLN-3e-nGr" customClass="DatePickerTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="290" width="414" height="70"/>
+                                        <rect key="frame" x="0.0" y="290" width="896" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eLN-3e-nGr" id="wu9-G5-kyQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <rect key="frame" x="44" y="0.0" width="808" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="E2m-tz-gxQ">
-                                                    <rect key="frame" x="30" y="20" width="354" height="30"/>
+                                                    <rect key="frame" x="30" y="20" width="748" height="30"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GN0-pE-yb0">
-                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="748" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="7eg-MG-G3X"/>
                                                             </constraints>
@@ -1094,14 +1134,14 @@
                             <tableViewSection headerTitle="For lending" id="G1C-uw-ViZ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ButtonCell" rowHeight="110" id="4nm-mH-uBU" customClass="ButtonTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="416" width="414" height="110"/>
+                                        <rect key="frame" x="0.0" y="416" width="896" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4nm-mH-uBU" id="Vrm-H1-rMb">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                            <rect key="frame" x="44" y="0.0" width="808" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iu2-CV-RgN">
-                                                    <rect key="frame" x="15" y="15" width="384" height="80"/>
+                                                    <rect key="frame" x="15" y="15" width="778" height="80"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="Rk9-TK-ozI"/>
@@ -1150,7 +1190,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k6M-oa-BrU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="kzU-xm-0p0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
