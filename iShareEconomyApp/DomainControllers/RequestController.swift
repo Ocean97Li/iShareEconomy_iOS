@@ -32,7 +32,7 @@ class RequestController {
             if let authToken = $0.element as? String {
                 self.auth = authToken
             }
-        })
+        }).disposed(by: dispose)
         
        userController.users.subscribe({
             if let users = $0.element as? [User] {
@@ -98,7 +98,7 @@ class RequestController {
         request.setValue("Bearer \(loginObject!.token)", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let response = data, error == nil else {
+            guard let _ = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
                 return
             }
@@ -144,7 +144,7 @@ class RequestController {
         request.httpBody = jsonData
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
+            guard let _ = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
                 return
             }
@@ -156,7 +156,9 @@ class RequestController {
     
     private func findObject(by id: String) -> LendObject? {
         var usersALL = self.users
-        usersALL.append(loggedInUser!)
+        if let loggedInUser = loggedInUser {
+             usersALL.append(loggedInUser)
+        }
         return usersALL.flatMap { $0.lending }.first(where: {$0.id == id})
     }
     

@@ -96,12 +96,6 @@ class RequestsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let editAction = UIContextualAction(style: .normal, title: "Approve") { (action, view, completionHandler) in
-            let inbox: [Request]
-            if indexPath.section == 0 {
-                inbox = self.outRequests
-            } else {
-                inbox = self.inRequests
-            }
             let requestId = (indexPath.section == 0 ? self.outRequests : self.inRequests)[indexPath.row].id
             self.requestController.approveInRequest(withId: requestId)
             completionHandler(true)
@@ -110,12 +104,6 @@ class RequestsTableViewController: UITableViewController {
         editAction.image = UIImage(systemName: "checkmark")
 
         let deleteAction = UIContextualAction(style: .normal, title: "Deny") { (action, view, completionHandler) in
-            let inbox: [Request]
-            if indexPath.section == 0 {
-                inbox = self.outRequests
-            } else {
-                inbox = self.inRequests
-            }
             let requestId = (indexPath.section == 0 ? self.outRequests : self.inRequests)[indexPath.row].id
             self.requestController.denyInRequest(withId: requestId)
             completionHandler(true)

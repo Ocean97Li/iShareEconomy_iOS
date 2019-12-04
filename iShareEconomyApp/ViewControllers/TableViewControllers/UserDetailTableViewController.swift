@@ -135,7 +135,7 @@ class UserDetailTableViewController: UITableViewController, UIAdaptivePresentati
     }
     
     func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
-        self.cellCoordinator.usersViewedStack.popLast()
+        self.cellCoordinator.usersViewedStack.removeLast()
         self.dismiss(animated: true, completion: nil)
     }
     

@@ -26,7 +26,7 @@ class UserHeaderView: UIView {
             distanceLabel.text = ""
         }
         var ratingString = ""
-        for index in 1...rating {
+        for _ in 1...rating {
             ratingString.append("★")
         }
         ratingLabel.text = ratingString
