@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class CreateLendObjectTableViewController: UITableViewController {
+class CreateLendObjectTableViewController: UITableViewController, UITextFieldDelegate {
     
     let userController = UserController.shared
     let dispose = DisposeBag()
@@ -80,12 +80,28 @@ class CreateLendObjectTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameTextfield.smartInsertDeleteType = UITextSmartInsertDeleteType.no
+        nameTextfield.delegate = self
+        descriptionTextfield.smartInsertDeleteType = UITextSmartInsertDeleteType.no
+        descriptionTextfield.delegate = self
         toggleAddButton(false)
         UserController.shared.loggedInUser.subscribe({
             if let loggedInUser = $0.element as? User {
                 self.user = loggedInUser
             }
         }).disposed(by: dispose)
+    }
+    
+    
+    // URL: https://stackoverflow.com/questions/25223407/max-length-uitextfield#answer-25224331
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let textFieldText = textField.text,
+            let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                return false
+        }
+        let substringToReplace = textFieldText[rangeOfTextToReplace]
+        let count = textFieldText.count - substringToReplace.count + string.count
+        return count <= 25
     }
     
     private func toggleAddButton(_ bool: Bool) {
