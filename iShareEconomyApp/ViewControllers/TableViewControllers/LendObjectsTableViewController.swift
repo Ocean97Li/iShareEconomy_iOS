@@ -100,7 +100,7 @@ class LendObjectsTableViewController: UITableViewController {
             if restorationID == "Sharing" {
                 self.objects = user.lending
                 self.titleText = "Sharing"
-            } else {
+            } else if restorationID == "Using" {
                 self.objects = user.using
                 self.titleText = "Using"
             }

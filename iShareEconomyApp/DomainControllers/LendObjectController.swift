@@ -25,7 +25,8 @@ class LendObjectController {
         return objects
     }
     
-    static func lendObject(fromJSON objectJSON: [String: Any]) -> LendObject? {        if let ownerJSON = objectJSON["owner"] as? [String: Any],
+    static func lendObject(fromJSON objectJSON: [String: Any]) -> LendObject? {
+        if let ownerJSON = objectJSON["owner"] as? [String: Any],
             let owner = extractObjectOwnerFromJSON(ownerJSON),
             let id = objectJSON["_id"] as? String,
             let waitinglistJSON = objectJSON["waitinglist"] as? [[String: Any]],
@@ -48,7 +49,7 @@ class LendObjectController {
         return nil
     }
     
-    private static func extractObjectOwnerFromJSON(_ ownerJSON: [String: Any]) -> ObjectOwner? {
+    public static func extractObjectOwnerFromJSON(_ ownerJSON: [String: Any]) -> ObjectOwner? {
         if let ownerId = ownerJSON["id"] as? String,
             let ownerName = ownerJSON["name"] as? String {
             return ObjectOwner(userId: ownerId, userName: ownerName)

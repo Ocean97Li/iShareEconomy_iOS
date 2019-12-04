@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct LendObject {
+class LendObject {
     let id: String
     let owner: ObjectOwner
     let waitinglist: [ObjectUser]
@@ -17,4 +17,15 @@ struct LendObject {
     let description: String
     let type: LendObjectType
     let rules: String
+    
+    init(id: String, owner: ObjectOwner, waitinglist: [ObjectUser], currentUser: ObjectUser?, name: String, description: String, type: LendObjectType, rules: String) {
+        self.id = id
+        self.owner = owner
+        self.waitinglist = waitinglist
+        self.currentUser = currentUser
+        self.name = name
+        self.description = description
+        self.type = type
+        self.rules = rules
+    }
 }
