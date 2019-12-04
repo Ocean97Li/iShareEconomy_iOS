@@ -12,10 +12,12 @@ import RxSwift
 class LoginController {
     
     static let shared = LoginController()
-    
+        
     let loggedIn = BehaviorSubject<LoginObject?>(value: nil)
     let loginError = BehaviorSubject<String?>(value: nil)
     let authToken = BehaviorSubject<String?>(value: nil)
+    
+    var loggedInUserId = ""
     
     private init() {
         loggedIn.onNext(loadFromFile())
@@ -51,6 +53,7 @@ class LoginController {
                     self.saveToFile(loginObject)
                     self.authToken.onNext(token)
                     self.loggedIn.onNext(loginObject)
+                    self.loggedInUserId = loginObject.id
                     
                 } else {
                     if let message = responseJSON["message"] as? String {
@@ -103,6 +106,7 @@ class LoginController {
         let decoder = PropertyListDecoder()
         if let retrieved = try? Data(contentsOf: ActiveURL),
             let decoded = try? decoder.decode(LoginObject.self, from: retrieved) {
+            self.loggedInUserId = decoded.id
             self.authToken.onNext(decoded.token)
             return decoded
         }

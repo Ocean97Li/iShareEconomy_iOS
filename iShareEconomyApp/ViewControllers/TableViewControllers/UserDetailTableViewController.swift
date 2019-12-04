@@ -77,7 +77,9 @@ class UserDetailTableViewController: UITableViewController, UIAdaptivePresentati
                    if let user = user {
                     cell.update(user.lending[indexPath.row])
                    }
-                   
+            let button = cell.contentView.subviews[0] as? UIButton
+            button?.addTarget(self, action: #selector(didButtonClick), for: .touchUpInside)
+                        
                    return cell
         } else { //using
             let cell: LendObjectTableViewCell
@@ -90,6 +92,10 @@ class UserDetailTableViewController: UITableViewController, UIAdaptivePresentati
                    return cell
         }
        
+    }
+    
+    @objc func didButtonClick(_ sender: UIButton) {
+        print("date time!")
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

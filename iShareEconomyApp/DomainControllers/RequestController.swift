@@ -17,13 +17,22 @@ class RequestController {
     let inRequests = BehaviorSubject<[Request]?>(value: nil)
     // Requests by me
     let outRequests = BehaviorSubject<[Request]?>(value: nil)
+    // Request sent
+    let requestSent = BehaviorSubject<Request?>(value: nil)
     
     private var loginObject: LoginObject? = nil
     private let userController = UserController.shared
     private var users: [User] = []
     private var loggedInUser: User? = nil
+    private var auth = ""
     
     private init() {
+        
+        LoginController.shared.authToken.subscribe({
+            if let authToken = $0.element as? String {
+                self.auth = authToken
+            }
+        })
         
        userController.users.subscribe({
             if let users = $0.element as? [User] {
@@ -112,6 +121,35 @@ class RequestController {
             }
             // Succeeded
             self.fetchRequests(withUserId: self.loggedInUser!.id, forMe: true)
+        }
+        task.resume()
+    }
+    
+    func addOutRequest(objectId: String, ownerId: String, fromDate: Date, toDate: Date) {
+        let source = loggedInUser!
+        let jsonDict = [
+            "source": ["id": source.id, "name": source.fullname],
+            "object": ["_id": objectId, "owner": ["id": ownerId]],
+            "fromdate": fromDate.removeTime().toUTCString(),
+            "todate": fromDate.removeTime().toUTCString()
+            ] as [String : Any]
+        
+        let url = URL(string: "https://ishare-economy-backend.herokuapp.com/API/users/\(loggedInUser!.id)/outRequest")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "post"
+        request.setValue("Bearer \(auth)", forHTTPHeaderField: "Authorization")
+       
+        let jsonData = try! JSONSerialization.data(withJSONObject: jsonDict, options: [])
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            // Post Succesfull, new object returned
+            self.fetchRequests(withUserId: self.loggedInUser!.id, forMe: false)
         }
         task.resume()
     }

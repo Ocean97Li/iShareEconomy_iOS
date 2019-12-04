@@ -4,7 +4,7 @@
 //
 //  Created by Hu Ocean Li on 07/11/2019.
 //  Copyright © 2019 Hu Ocean Li. All rights reserved.
-//
+// URL:https://stackoverflow.com/questions/30691740/resize-the-screen-when-keyboard-appears#answer-41808338
 
 import Foundation
 import UIKit

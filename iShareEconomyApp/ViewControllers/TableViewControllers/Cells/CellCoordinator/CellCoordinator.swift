@@ -17,6 +17,8 @@ class CellCoordinator {
     
     let userHeader = PublishSubject<String>()
     
+    let datePickerDate = PublishSubject<Date>()
+        
     func updateUserHeader(with userId: String) {
         if !usersViewedStack.contains(userId) {
             usersViewedStack.append(userId)

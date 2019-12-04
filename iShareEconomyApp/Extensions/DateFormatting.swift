@@ -20,4 +20,19 @@ extension Date {
         df.dateFormat = "dd/MM/yyyy"
         return df.string(from: self)
     }
+    
+    func removeTime() -> Date {
+        return Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: self)!
+    }
+    
+    func toUTCString() -> String {
+       let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+        return df.string(from: self)
+    }
+    
+    func adding(_ component: Calendar.Component, _ value: Int) -> Date? {
+        return Calendar.current.date(byAdding: component, value: value, to: self)
+    }
+    
 }
