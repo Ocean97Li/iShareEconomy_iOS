@@ -864,6 +864,7 @@
                                         <constraint firstItem="HDB-PY-Vhd" firstAttribute="top" secondItem="0sg-Zo-BuF" secondAttribute="top" id="t8K-nr-jfO"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <connections>
                                     <outlet property="requestView" destination="HDB-PY-Vhd" id="sik-2s-9Ku"/>
                                 </connections>
@@ -941,6 +942,7 @@
                                         <constraint firstAttribute="trailing" secondItem="vMz-zw-86T" secondAttribute="trailing" id="s4A-D8-YWZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <connections>
                                     <outlet property="objectUserOwnerView" destination="PhZ-12-uXE" id="cVv-xo-lSq"/>
                                 </connections>
