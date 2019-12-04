@@ -68,13 +68,13 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="w2r-o7-QLa">
                             <connections>
-                                <segue destination="lKJ-jB-J3G" kind="presentation" id="PAu-uz-lpN"/>
+                                <segue destination="lKJ-jB-J3G" kind="presentation" identifier="SharingToCreateSegue" id="PAu-uz-lpN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="removeItemBarButton" destination="bKD-EK-yxC" id="ZUo-RN-1OH"/>
-                        <segue destination="Aii-tx-Hgk" kind="show" identifier="" id="rhp-Lu-fZj"/>
+                        <segue destination="Aii-tx-Hgk" kind="show" identifier="SharingToObjectDetailSegue" id="rhp-Lu-fZj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="098-iA-UN2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -807,14 +807,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Using" id="jgL-Rl-Wva">
-                        <barButtonItem key="rightBarButtonItem" title="Find new" style="plain" id="PPI-Np-Hf5">
+                        <barButtonItem key="rightBarButtonItem" title="Find new" style="done" id="PPI-Np-Hf5">
                             <connections>
                                 <segue destination="dC1-EV-0rg" kind="show" identifier="UsingToUsersOverviewSegue" id="4tO-zz-qiQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Aii-tx-Hgk" kind="show" id="tjF-gf-ejk"/>
+                        <segue destination="Aii-tx-Hgk" kind="show" identifier="UsingToObjectDetailSegue" id="tjF-gf-ejk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRy-jq-81u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -907,7 +907,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ObjectUserOwnerCell" id="aSP-7J-H05" userLabel="ObjectUserOwnerCell" customClass="ObjectUserOwnerTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ObjectUserOwnerCell" id="aSP-7J-H05" userLabel="ObjectUserOwnerCell" customClass="ObjectUserOwnerTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="80.333335876464844"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aSP-7J-H05" id="2LO-lm-xHm">
@@ -971,10 +971,10 @@
                         <sections>
                             <tableViewSection headerTitle="For lending:" id="haV-5U-Xlm">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LendObjectCell" id="eSb-le-T1B" userLabel="LendObjectCell" customClass="LendObjectTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LendObjectCell" rowHeight="80" id="eSb-le-T1B" userLabel="LendObjectCell" customClass="LendObjectTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eSb-le-T1B" id="bSP-VG-0Qk">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eSb-le-T1B" id="bSP-VG-0Qk">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -1091,10 +1091,10 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="For lending" id="G1C-uw-ViZ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ButtonCell" id="4nm-mH-uBU" customClass="ButtonTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ButtonCell" rowHeight="110" id="4nm-mH-uBU" customClass="ButtonTableViewCell" customModule="iShareEconomyApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="416" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4nm-mH-uBU" id="Vrm-H1-rMb">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4nm-mH-uBU" id="Vrm-H1-rMb">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
